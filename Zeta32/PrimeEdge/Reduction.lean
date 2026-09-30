@@ -6,7 +6,7 @@ public import Zeta32.Family
 @[expose] public section
 namespace Zeta32.PrimeEdge
 
-/-! the informal proof, §6 Proposition 6. `exceptional` is defined in `Zeta32.PrimeEdge.Reference`
+/-! the proof notes, §6 Proposition 6. `exceptional` is defined in `Zeta32.PrimeEdge.Reference`
 (same name, same value). the proof is the S5 assembly (primitive reduction). -/
 
 open Polynomial Zeta32.Arith.Local

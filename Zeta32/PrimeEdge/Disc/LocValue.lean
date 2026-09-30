@@ -6,7 +6,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §2, Lemma 3 (local integrality) for the finite local functional
+/-! the proof notes, §2, Lemma 3 (local integrality) for the finite local functional
 `locValue` of `Local.lean`: linearity in the numerator, the valuation of `locValue s (u^e) M` for
 `M ⊆ {0,…,4}` (`≥ -1` always, `≥ 0` if `e ≤ |M| + 2p - 2`), the `s`-dependence
 (`≥ 1` if `e ≤ |M| + p - 2`), and removal of a near pole at `0` against a factor `u`. -/

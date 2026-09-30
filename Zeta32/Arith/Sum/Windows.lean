@@ -4,7 +4,7 @@ public import Mathlib.NumberTheory.AbelSummation
 public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 public import Mathlib.Analysis.Calculus.Deriv.Inv
 
-/-! Prime sums over windows `n/u₂ < p ≤ n/u₁` (the informal proof, §8.5, Lemma 11),
+/-! Prime sums over windows `n/u₂ < p ≤ n/u₁` (the proof notes, §8.5, Lemma 11),
 in the parametrisation `u = n/p`.
 
 * `logSum (n/u₂) (n/u₁) / n → 1/u₁ − 1/u₂`       (θ(y) ~ y)

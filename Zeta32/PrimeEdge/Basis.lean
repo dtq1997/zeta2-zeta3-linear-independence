@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §6 "Basis": the CRT product basis for `n = p - 1`,
+/-! the proof notes, §6 "Basis": the CRT product basis for `n = p - 1`,
 `φ_{b,i} = (t + b)^i ∏_{b' ≠ b} (t + b')^{m_{b'}}` (`0 ≤ b < p`, `i < m_b`), `h = 3(p-1)` vectors,
 each of degree `< h`. On the disc `t = -b + p u` it is `(p u)^i · (p-unit)`, and on every other disc
 `b'` it carries the factor `(t + b')^{m_{b'}}`. -/

@@ -18,7 +18,7 @@ public import Zeta32.Fstar
 public import Zeta32.FstarPointsW
 public import Zeta32.FstarPointsRho
 
-/-! Final assembly (§9 of the informal proof). The main theorem follows from three nodes:
+/-! Final assembly (§9 of the proof notes). The main theorem follows from three nodes:
 the arithmetic bound on the primitive content (`arith_node`), the analytic bound on the Hankel determinant
 at `ζ(3) − r ζ(2)` (`analytic_node`), and the nonvanishing modulo primes (`prime_edge_node`); linear
 independence then follows from the irrationality of `ζ(3) − r ζ(2)` for every rational `r` and of `ζ(2)`. -/
@@ -30,7 +30,7 @@ set_option backward.privateInPublic true
 open Filter Polynomial
 
 namespace Zeta32
-/-- `FstarPoints` from another module (`Fstar.pointsW`) and another module (`Fstar.pointsRho`), another module (`Arith.arith_of_parts` with `ArithSum.arith_sum`), another module (`Analytic.energy_bound_of_inputs`), another module skeleton (`PrimeEdge.prime_edge`, with 9 leaf sorries in PrimeEdge/). -/
+/-- `FstarPoints`, from `Fstar.pointsW` and `Fstar.pointsRho`. -/
 theorem fstarPoints : FstarPoints := by
   obtain ⟨hm1, hm2, hlog, hW⟩ := Fstar.pointsW
   obtain ⟨hell, hR⟩ := Fstar.pointsRho

@@ -13,7 +13,7 @@ set_option backward.privateInPublic true
 -- adapted from Apery/Arith/BasisChange.lean in mo271/Zeta5 by Moritz Firsching (Apache-2.0).
 -- the functional is our `U_r` (poles `2jX + β_j`), layout (4,5,3).
 
-/-! the informal proof, §7: the unitriangular change `t^i ↦ i!·binom(t,i)` gives
+/-! the proof notes, §7: the unitriangular change `t^i ↦ i!·binom(t,i)` gives
 `Q_n/F_n = det[U_r(binom(t,a) binom(t,b) R_n)]`, and with one factor `S_n` per row,
 `Qtilde r n = det[U_r(S_n D_n^4 binom(t,a) binom(t,b) / D_{5n})]`. -/
 open Polynomial

@@ -13,7 +13,7 @@ set_option backward.privateInPublic true
 @[expose] public section
 
 /-! Factorial bounds for `S_n = (5n)!/(n!)⁴` and `F_n = ∏_{i<3n} (i!)²`
-(the informal proof (5′), (6′)).
+(the proof notes (5′), (6′)).
 -- adapted from Li2Unified/Modular/Base/FactorialLogBounds.lean, Base/SumNatMulLog.lean,
 --   Base/OriginalFnLogBounds.lean (factorial_log_sum_bounds), Base/OriginalSnLogBounds.lean (pattern). -/
 

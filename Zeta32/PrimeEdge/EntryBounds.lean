@@ -6,7 +6,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §3 Lemma 4 bounds for the CRT-basis entries (`n = p - 1`),
+/-! the proof notes, §3 Lemma 4 bounds for the CRT-basis entries (`n = p - 1`),
 and the slope (X-coefficient) bound of the Remark after Lemma 4.
 
 Conventions of `Arith/Local`: `Adm p A e` bounds the Gauss valuation of `A(m + p x)` by `e (m mod p)`;
@@ -145,7 +145,7 @@ theorem card_residue_Icc (hp : 5 ≤ p) {d : ℕ} (hd : d < p) :
     · intro ht
       interval_cases t <;> omega
 
-/-- Pole count per class (reduction adapted from `card_plc_Pl5` in Z/lean/Zeta32/Arith/Greedy.lean). -/
+/-- Pole count per class (reduction adapted from `card_plc_Pl5` in Zeta32/Arith/Greedy.lean). -/
 theorem card_plc_Pl5 [Fact p.Prime] (hp : 5 ≤ p) (γ : ZMod p) :
     (plc p (Pl5 (p - 1)) γ).card = poleCount p (-γ).val := by
   unfold plc Pl5

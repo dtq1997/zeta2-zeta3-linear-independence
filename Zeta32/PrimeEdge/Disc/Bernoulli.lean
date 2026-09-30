@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! von Staudt–Clausen consequences used by the informal proof, Lemma 3:
+/-! von Staudt–Clausen consequences used by the proof notes, Lemma 3:
 `v_p(B'_k) ≥ -1` always, `v_p(B'_k) ≥ 0` unless `k > 0` and `(p - 1) ∣ k`, and the resulting
 bounds on the local moments `locMoment s e = e B'_{e-1} + 2 s B'_e` for `v_p(s) ≥ 1`. -/
 

@@ -54,14 +54,14 @@ end Zeta32.Outer
 
 namespace Zeta32.Arith
 
-/-! the informal proof end of §4 (used as range R3 in §8): for a prime `p > 5n` with `p ∤ den r`, every coefficient
+/-! the proof notes end of §4 (used as range R3 in §8): for a prime `p > 5n` with `p ∤ den r`, every coefficient
 of `Qtilde r n` is `p`-integral. Every Hankel entry is `p`-integral (the polynomial-part moments have degree
 `≤ 5n - 2 ≤ p - 3`; for `j ≤ 5n < p` the residue `ρ_j` and `β_j` are `p`-integral), and the normalizer
 `S_n^{3n}/F_n` is a `p`-adic unit. -/
 open Polynomial Zeta32.Outer
 
 
-/-- the informal proof, §4, last paragraph: for `p > 5n`, `p ∤ den r`, every nonzero coefficient of `Qtilde r n`
+/-- the proof notes, §4, last paragraph: for `p > 5n`, `p ∤ den r`, every nonzero coefficient of `Qtilde r n`
 has nonnegative `p`-adic valuation. -/
 theorem large_prime_integrality (r : ℚ) (n p : ℕ) : p.Prime → 5*n < p → ¬ p ∣ r.den → ∀ k,
     (Qtilde r n).coeff k ≠ 0 → 0 ≤ padicValRat p ((Qtilde r n).coeff k) := by

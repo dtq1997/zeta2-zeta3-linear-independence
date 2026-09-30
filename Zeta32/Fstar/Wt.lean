@@ -11,7 +11,7 @@ public import Mathlib.Tactic.Ring
 
 @[expose] public section
 
-/-! the informal proof, 5.4 (Lemma 12), the weight `W̃`:
+/-! the proof notes, 5.4 (Lemma 12), the weight `W̃`:
 `W̃ = W2` on `[0, ∞)` (Lean's `arctan (1/0) = 0` convention included), `W2 0 = 0`, and
 `W2′(x) = (2/3)(2·atan x + π/4 − atan(x/5)/2) ≥ 0` for `x ≥ 0`, which is the addendum's
 `W̃′ = (2/3)(π − 2 atan(1/x) + atan(5/x)/2)` after `atan(1/x) = π/2 − atan x`. Written from scratch. -/

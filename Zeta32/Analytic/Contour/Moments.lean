@@ -6,7 +6,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! Moments of the logistic functional `E[φ] = ∫ φ(1/2 + iy) ρ(y) dy` (the informal proof, §0, §5.1):
+/-! Moments of the logistic functional `E[φ] = ∫ φ(1/2 + iy) ρ(y) dy` (the proof notes, §0, §5.1):
 `E[t^m] = B_m` (Bernoulli numbers with `B₁ = +1/2`, i.e. `bernoulli'`), and for `j ≥ 0`, `p ≥ 0`,
 `E[(t+j)^{-(p+1)}] = (p+1) (ζ(p+2) − H_j^{(p+2)})`.
 Both follow from the shift rule `E[F(t+1)] − E[F(t)] = F'(1)` alone. -/

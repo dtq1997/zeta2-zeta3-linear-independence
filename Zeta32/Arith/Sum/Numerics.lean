@@ -4,7 +4,7 @@ public import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 public import Mathlib.Analysis.Complex.ExponentialBounds
 
-/-! The numerical constant of the finite-piece route (the informal proof, §8.5).
+/-! The numerical constant of the finite-piece route (the proof notes, §8.5).
 
 * `midRat` = Σ over the 196 relaxed pieces of `a_J |J| + b_J (x₂² − x₁²)/2` (exact rational; one kernel `decide`
   per block of at most 10 pieces, about 200 rational operations each);

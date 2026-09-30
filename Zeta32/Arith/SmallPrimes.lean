@@ -7,7 +7,7 @@ public import Zeta32.Arith.Small.Entry
 open Zeta32.Arith.Local
 namespace Zeta32.Arith
 
-/-! the informal proof, §7, Lemma 7: crude all-prime coefficient valuation bound.
+/-! the proof notes, §7, Lemma 7: crude all-prime coefficient valuation bound.
 `Qtilde r n = det (binomGram r n)` (Small/Gram), every entry has Gauss valuation
 `≥ -3⌊log_p(10n+2)⌋ - v_p(den r)` (Small/Entry), and the determinant of a `3n × 3n` matrix loses at most
 `3n` times the entry bound (`det_GV`). Here `D = 2h + sn + 2 = 10n + 2`. -/

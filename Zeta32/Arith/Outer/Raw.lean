@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 open Zeta32.Arith.Local
 
-/-! the informal proof section 4, Lemma 5: the Vandermonde bound for the actual `Q r n`.
+/-! the proof notes section 4, Lemma 5: the Vandermonde bound for the actual `Q r n`.
 
 Rows `a` with `a + 2n + 2 > p` are multiplied by `p` (`rowScale`); then the polynomial-part matrix
 `W_{ab} = U_r(q_{a+b})` is `p`-integral (its moments have degree `≤ a + 2n - 1`, and `U_r(t^e)` is

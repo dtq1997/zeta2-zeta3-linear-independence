@@ -8,7 +8,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §5.2: Heine determinant integral and absolute-value bound.
+/-! the proof notes, §5.2: Heine determinant integral and absolute-value bound.
 
 Every entry of `X • B + A` at `X = C_r` is `∫ t^i · t^k (t R_n)(t) w(y) dy` with `t = 1/2 + iy`
 (`logistic_representation`). Andréief's identity turns the determinant into
@@ -107,7 +107,7 @@ lemma heine_norm_integrand (r : ℚ) (n : ℕ) (x : Fin (3*n) → ℝ) :
     mul_assoc, ← sq, heine_norm_vandermonde_sq, norm_prod]
   rfl
 
-/-- **the informal proof, 5.2 (Heine), bound form.** -/
+/-- **the proof notes, 5.2 (Heine), bound form.** -/
 theorem heine_bound : ∀ (r : ℚ) (n : ℕ), HeineBound r n := by
   intro r n
   unfold HeineBound

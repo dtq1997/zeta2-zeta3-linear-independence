@@ -5,7 +5,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §2 Lemma 3 for truncated scaled numerators, and the coefficients
+/-! the proof notes, §2 Lemma 3 for truncated scaled numerators, and the coefficients
 of `seriesPart` when `dissectNum = p^E u^E R`: the coefficient of `u^e` vanishes for `e < E` and
 has valuation `≥ e`. -/
 

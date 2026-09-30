@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 open Zeta32.Arith.Local
 
-/-! Bookkeeping for the informal proof section 8.2: the exact valuation of the normalizer `S_n^{3n}/F_n`
+/-! Bookkeeping for the proof notes section 8.2: the exact valuation of the normalizer `S_n^{3n}/F_n`
 (Legendre with one level, `5n < p²`), the row product `∏ rowScale = p^{5n+1-p}`, and the sum of the class
 bounds over all classes. `normScale_val` and the floor sums are adapted from
 dtq1997/li2-half-irrationality@d5d8206:Li2Unified/Modular/Base/

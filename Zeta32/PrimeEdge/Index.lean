@@ -9,7 +9,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §6: the greedy layout for `n = p - 1`, layout (4,5,3).
+/-! the proof notes, §6: the greedy layout for `n = p - 1`, layout (4,5,3).
 
 Classes `b ∈ {0, …, p-1}` of the disc `t = -b + p u`:
 * zero class `b = 0`: column base `c_0 = -5`, multiplicity `4`, levels `-5, -3, -1, 1`;

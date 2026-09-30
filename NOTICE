@@ -9,9 +9,11 @@ Irrationality of Li₂(1/2), by Qian Tang
   (which itself adapts code from the projects below; see its NOTICE)
   Zeta32/Analytic/Contour/Andreief.lean
   Zeta32/Analytic/Contour/AndreiefIntegrable.lean
+  Zeta32/Analytic/Contour/Kernel.lean
   Zeta32/Analytic/Contour/PartialFractions.lean
   Zeta32/Analytic/Contour/RectangleResidue.lean
   Zeta32/Analytic/Contour/Shift.lean
+  Zeta32/Analytic/Energy/Assembly.lean
   Zeta32/Analytic/Energy/CircleTools.lean
   Zeta32/Analytic/Energy/LogNorm.lean
   Zeta32/Analytic/Energy/Pointwise.lean
@@ -47,7 +49,9 @@ Irrationality of Li₂(1/2), by Qian Tang
   Zeta32/Arith/Sum/PNT/DecayPNTWiener6c.lean
   Zeta32/Arith/Sum/PNT/PrimeThetaInterval.lean
   Zeta32/Arith/Sum/PNT/PrimeWeightedAbel.lean
+  Zeta32/Arith/Sum/Windows.lean
   Zeta32/PrimeEdge/Auxiliary/ClassBasis.lean
+  Zeta32/PrimeEdge/Gram.lean
   Zeta32/PrimeEdge/Valuation.lean
 
 mo271/Zeta5 (irrationality of ζ(5)), by Moritz Firsching
@@ -58,9 +62,12 @@ mo271/Zeta5 (irrationality of ζ(5)), by Moritz Firsching
   Zeta32/Analytic/Energy/CircleTools.lean
   Zeta32/Analytic/Energy/ZeroMass.lean
   Zeta32/Arith/Local/Binom.lean
+  Zeta32/Arith/Local/Entry.lean
   Zeta32/Arith/Local/PoleFun.lean
   Zeta32/Arith/Local/Val.lean
   Zeta32/Arith/Small/Gram.lean
+  Zeta32/Arith/Sum/Main.lean
+  Zeta32/Arith/Sum/Windows.lean
   Zeta32/Criterion.lean
   Zeta32/PrimeEdge/Auxiliary/ClassBasis.lean
   Zeta32/PrimeObstruction.lean

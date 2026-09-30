@@ -5,7 +5,7 @@ public import Mathlib.Tactic.FinCases
 
 @[expose] public section
 
-/-! `FstarPoints → FstarInput`: the informal proof, 5.4, Lemma 12 and the
+/-! `FstarPoints → FstarInput`: the proof notes, 5.4, Lemma 12 and the
 "Numerical conclusion", for layout (4,5,3) and `Fconst = −6`.
 
 1. `massA` is nondecreasing on `[0, ∞)`, so `massA a = 1` forces `aMinus < a < aPlus`.

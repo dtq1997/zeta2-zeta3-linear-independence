@@ -3,8 +3,8 @@ public import Zeta32.Arith.Sum.Windows
 public import Zeta32.Arith.Sum.Numerics
 public import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
-/-! `arith_sum`: the prime sum behind the arithmetic constant (the informal proof, §8,
-the informal proof, §8.5, finite-piece route).
+/-! `arith_sum`: the prime sum behind the arithmetic constant (the proof notes, §8,
+the proof notes, §8.5, finite-piece route).
 
 The primes `p ≤ 5n` are split as
 * `p ≤ n/20`: `p ≤ n^{2/3}` by the crude bound `h0` (total `o(n²)`), `n^{2/3} < p ≤ n/20` by `h1` and

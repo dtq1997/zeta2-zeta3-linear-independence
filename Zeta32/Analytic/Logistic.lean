@@ -6,7 +6,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §5.1: logistic integral representation of `U_r`.
+/-! the proof notes, §5.1: logistic integral representation of `U_r`.
 
 With `t = 1/2 + iy`, `ρ(y) = (π/2) sech²(πy)` and `w = 2rρ + iρ'` (`wfun` of `Interfaces.lean`),
 integration by parts gives `∫ G(t) w(y) dy = 2r E[G] + E[G']`, i.e. `U_r(f) = B((tf)') + 2r B(tf)`
@@ -202,7 +202,7 @@ lemma logistic_integrable_entry (r : ℚ) (n e : ℕ) :
   exact (integrable_finsetSum _ fun e' _ => (integrable_pow_wfun r (e' + 1)).const_mul _).add
     (integrable_finsetSum _ fun j _ => (integrable_pole_wfun r j).const_mul _)
 
-/-- **Entry identity** (the informal proof, 5.1): `U_r(t^e R_n) = C_r · slope + intercept`. -/
+/-- **Entry identity** (the proof notes, 5.1): `U_r(t^e R_n) = C_r · slope + intercept`. -/
 theorem logistic_representation (r : ℚ) (n e : ℕ) :
     ∫ y : ℝ, tpt y * (tpt y ^ e * Rfun n (tpt y)) * wfun r y =
       ((Cr r : ℝ) : ℂ) * (slope n e : ℂ) + (intercept r n e : ℂ) := by

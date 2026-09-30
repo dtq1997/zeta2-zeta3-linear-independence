@@ -13,9 +13,9 @@ project:
     The main difference from the Li₂(1/2) proof is that the rational
     functions appearing here are allowed to have poles of order two. The
     remaining details are similar, with some minor modifications.
-    The compared theorem depends on propext, Classical.choice and
+    The compared theorems depend on propext, Classical.choice and
     Quot.sound and on nothing else, and there is no sorry outside the
-    one deliberate hole in Challenge.lean.
+    deliberate holes in Challenge.lean.
   authors:
     - "Qian Tang"
   responsible_maintainers:
@@ -98,6 +98,13 @@ sources:
     type: "preprint"
     relationship: "background"
 
+  - title: "On simultaneous diophantine approximations to ζ(2) and ζ(3)"
+    authors: ["Simon Dauguet", "Wadim Zudilin"]
+    id: "https://doi.org/10.1016/j.jnt.2014.06.007"
+    type: "paper"
+    location: "J. Number Theory 145 (2014), 362–387"
+    relationship: "background"
+
   - title: "A Characterization of Umbral Calculus Inspired by Fractional Sums"
     authors: ["Qian Tang"]
     id: "https://arxiv.org/abs/2103.09117v1"
@@ -147,7 +154,8 @@ automation:
         from the projects listed under related_formalizations, with
         attribution recorded in NOTICE. Also wrote Challenge.lean and
         Solution.lean, prepared comparator.json for the Palomar submission,
-        and ran compilation and proof checks.
+        and ran compilation and proof checks. The mathematical argument was
+        also developed by the author with AI assistance.
 
 review:
   status: "self-assessed"
@@ -165,9 +173,10 @@ known_gaps: []
 limitations:
   - >-
     The proof is presented as a Lean development. No informal write-up
-    accompanies it.
+    accompanies it; section and lemma numbers in comments refer to the
+    author's unpublished proof notes.
   - >-
-    The compared theorem depends on propext, Classical.choice and
+    The compared theorems depend on propext, Classical.choice and
     Quot.sound, and on nothing else. There is no sorry in Zeta32/
     or Solution.lean, and no project-defined axiom, native_decide,
     unsafe declaration, @[implemented_by] or Float in the proof
@@ -176,9 +185,9 @@ limitations:
     The proof includes finite computations carried out using
     decide +kernel. These computations are checked by the Lean kernel.
   - >-
-    Challenge.lean states the result with one deliberate sorry;
-    that is the Comparator convention, and Solution.lean supplies
-    the proof.
+    Challenge.lean states each compared theorem with one deliberate
+    sorry; that is the Comparator convention, and Solution.lean
+    supplies the proofs.
 
 # ---------------------------------------------------------------------------
 # How the stated problem corresponds to the Lean declaration.

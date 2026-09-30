@@ -2,7 +2,7 @@ module
 public import Zeta32.Interfaces
 public import Mathlib.NumberTheory.Padics.PadicVal.Basic
 
-/-! the informal proof, §8.1 (i), (ii-norm): the scale valuation with one Legendre level,
+/-! the proof notes, §8.1 (i), (ii-norm): the scale valuation with one Legendre level,
 the reduction `cost ≤ -(v_p(scale) + allocCost)`, and the real relaxation of the allocation cost
 (completed square + Cauchy–Schwarz). -/
 
@@ -147,7 +147,7 @@ lemma sum_sq_lower_range (p : ℕ) (hp : 0 < p) (f : ℕ → ℝ) :
   rw [div_le_iff₀ hpR]
   nlinarith [hcauchy']
 
-/-- the informal proof, §8.1 (i): real relaxation of the allocation cost, with `S = Σ c_b`, `Q₂ = Σ c_b²`
+/-- the proof notes, §8.1 (i): real relaxation of the allocation cost, with `S = Σ c_b`, `Q₂ = Σ c_b²`
 (so `h(c̄-1) - Var/4 = h(S/p-1) + S²/(4p) - Q₂/4`). -/
 lemma allocation_relaxation (p h : ℕ) (hp : 0 < p) (c : ℕ → ℤ)
     (k : ℕ → ℕ) (hk : (∑ b ∈ Finset.range p, k b) = h) :

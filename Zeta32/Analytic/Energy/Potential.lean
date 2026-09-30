@@ -7,7 +7,7 @@ public import Mathlib.Topology.Order.IntermediateValue
 
 @[expose] public section
 
-/-! The comparison density `rhoA a` (the informal proof (8′), (11′), (15′)).
+/-! The comparison density `rhoA a` (the proof notes (8′), (11′), (15′)).
 
 `rhoA a = ∫ g̃(c) ρ_c dc` (CIntegrals); Tonelli/Fubini in `(t, c)` turns `∫ φ · rhoA` into `∫ g̃(c) ∫ φ · ρ_c`.
 With the per-component potentials (Poisson) and the `g̃`-integrals of `kC`, `wC` this gives

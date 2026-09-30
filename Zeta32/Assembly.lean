@@ -24,7 +24,7 @@ theorem abs_P_aeval_eq_dtilde_Qtilde (r : ℚ) (n : ℕ) (x : ℝ) :
 theorem P_eq_zero_of_Q_eq_zero (r : ℚ) (n : ℕ) (hQ : Q r n = 0) : P r n = 0 := by
   simp [P, primitiveQ, hQ]
 
-/-- The two growth nodes of the informal proof, §9, as hypotheses: arithmetic (`A = 283/50`, only needed when `Q r n ≠ 0`)
+/-- The two growth nodes of the proof notes, §9, as hypotheses: arithmetic (`A = 283/50`, only needed when `Q r n ≠ 0`)
 and analytic (`F = −6`). -/
 def ArithNode (r : ℚ) : Prop :=
   ∀ ε > 0, ∀ᶠ n : ℕ in atTop, Q r n ≠ 0 → Real.log (dtilde r n) ≤ (283/50 + ε) * (n:ℝ)^2
@@ -108,7 +108,7 @@ theorem rational_nonzero_infinitely_often (r : ℚ) (hEdge : PrimeEdgeNode r) (q
   refine ⟨p - 1, ?_, hne⟩
   omega
 
-/-- the informal proof, §9: the three nodes imply irrationality. -/
+/-- the proof notes, §9: the three nodes imply irrationality. -/
 theorem main_of_nodes (r : ℚ) (hArith : ArithNode r) (hAnalytic : AnalyticNode r) (hEdge : PrimeEdgeNode r) :
     Irrational (Cr r) := by
   apply Zeta32.irrational_of_int_polynomials (Cr r) (P r) (fun n => 3*n)

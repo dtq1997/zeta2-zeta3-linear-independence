@@ -6,7 +6,7 @@ public import Mathlib.Tactic.LinearCombination
 
 @[expose] public section
 
-/-! the informal proof, 5.4 (Lemma 12), the density `ρ_a`.
+/-! the proof notes, 5.4 (Lemma 12), the density `ρ_a`.
 For `0 < x ≤ a`: `G(c,x) = 2·arsinh(√(a²−x²)/√(c²+x²))`, so `ρ_a(x)` is a nondecreasing function of
 `s = √(a²−x²)` with coefficients `x ↦ √(c²+x²)` independent of `a`; this gives `ρ_a ≥ 0` and monotonicity in `a`.
 Monotonicity in `x` uses the log form with `U_c = √(c²+a²)` fixed and the identity

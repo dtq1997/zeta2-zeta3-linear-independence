@@ -6,14 +6,14 @@ public import Zeta32.Analytic.Energy.Regularity
 
 @[expose] public section
 
-/-! The configuration inequality (13′) of the informal proof, §5.3 for a density on `[-a, a]`.
+/-! The configuration inequality (13′) of the proof notes, §5.3 for a density on `[-a, a]`.
 
 Replace each point `x_i` by the circle of radius `ε` about it (angular measure, mass `2π`) and the comparison
 density by the measure `ν = ρ(t)dt` on `[-a, a] ⊂ ℂ`; apply the zero-mass energy inequality (ZeroMass) to
 `ν − (1/(2πh)) Σ circles`. Circle self energy `(2π)² log ε`, circle–circle `≥ (2π)² log|x_i − x_j|`
 (CircleTools, from Li₂), circle–`ν`: `2π ∫ ρ(t) log max(ε, |x_i − t|) dt = 2π(L(x_i) + ∫ ρ K)` with the truncation
 error `K ≥ 0`, `K = 0` for `|x_i − t| ≥ ε`, and `∫ ρK ≤ √ε(N²/2 + 2)` by AM–GM and `∫ K² ≤ 4ε`
-(this replaces the rearrangement step of the informal proof (13′); only `ρ ∈ L²` is used). -/
+(this replaces the rearrangement step of the proof notes (13′); only `ρ ∈ L²` is used). -/
 
 open Real MeasureTheory Set Filter
 open scoped Interval
@@ -537,7 +537,7 @@ def atom (ρ : ℝ → ℝ) (a : ℝ) {h : ℕ} (x : Fin h → ℝ) (ε : ℝ) :
   | none => (nuB ρ a).map (fun t : ℝ => (t : ℂ))
   | some i => circB.map (circleMap (x i : ℂ) ε)
 
-/-- the informal proof (13′): discretisation by circles of radius `ε`, zero-mass energy inequality. -/
+/-- the proof notes (13′): discretisation by circles of radius `ε`, zero-mass energy inequality. -/
 theorem discrete_energy {ρ : ℝ → ℝ} {a : ℝ} (hρ : GoodDensity ρ a) {h : ℕ} (hh : 0 < h)
     (x : Fin h → ℝ) (hx : Function.Injective x) {ε : ℝ} (hε : 0 < ε) (_hε1 : ε ≤ 1) :
     2 * ∑ i : Fin h, ∑ j ∈ Finset.Ioi i, Real.log |x j - x i| ≤

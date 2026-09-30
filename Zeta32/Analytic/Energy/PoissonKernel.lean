@@ -5,7 +5,7 @@ public import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 @[expose] public section
 
 /-! Poisson-kernel integrals on the unit circle, in the interval-integral form used by
-the component potentials of the informal proof (8′). `PK w θ` is the Poisson kernel `Re((e^{iθ}+w)/(e^{iθ}−w))`.
+the component potentials of the proof notes (8′). `PK w θ` is the Poisson kernel `Re((e^{iθ}+w)/(e^{iθ}−w))`.
 The three facts: `∫₀^{2π} PK w = 2π`, `∫₀^{2π} PK w · log|e^{iθ} − q| = 2π log|w − q|` for `|q| ≥ 1`, and
 `∫₀^{2π} log|e^{iθ} − q| = 2π log⁺|q|`; all from Mathlib's Poisson/Jensen formulas. -/
 

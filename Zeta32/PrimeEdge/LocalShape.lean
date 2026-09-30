@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! **S2b-2 / S2b-3**: the informal proof, §6 "Local shapes" and "Scaling", for the
+/-! **S2b-2 / S2b-3**: the proof notes, §6 "Local shapes" and "Scaling", for the
 entries of one class block, on its own disc and on the other discs (`n = p - 1`).
 
 Local shape of `seriesPart / nearProd` on the disc `b` for `a = ⟨b, i⟩`, `c = ⟨b, k⟩`

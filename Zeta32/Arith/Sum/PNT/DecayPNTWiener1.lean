@@ -14,7 +14,7 @@ public import Zeta32.Arith.Sum.PNT.DecayPNTSmooth
 set_option backward.privateInPublic true
 
 @[expose] public section
-/- Ported from PrimeNumberTheoremAnd d7f9e2bfdcc7 PrimeNumberTheoremAnd/Wiener.lean:1-413 (blueprint scaffolding stripped; dead sorry-tainted lemmas prelim_decay_2/AbsolutelyContinuous/prelim_decay_3/decay_alt deleted per audit). Unmodified mathematics; API adaptations only. -/
+/- Ported from PrimeNumberTheoremAnd d7f9e2bfdcc7 PrimeNumberTheoremAnd/Wiener.lean:1-413 (blueprint scaffolding stripped; the unused lemmas prelim_decay_2, AbsolutelyContinuous, prelim_decay_3 and decay_alt deleted). Unmodified mathematics; API adaptations only. -/
 
 -- note: the opening of ArithmeticFunction introduces a notation σ that seems
 -- impossible to hide, and hence parameters that are traditionally called σ will

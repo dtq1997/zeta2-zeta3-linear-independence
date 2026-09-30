@@ -6,11 +6,11 @@ public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 @[expose] public section
 
-/-! Definitions for the energy estimate of the informal proof, §5.3 (layout (4,5,3), c = 3).
+/-! Definitions for the energy estimate of the proof notes, §5.3 (layout (4,5,3), c = 3).
 
 * `potD ρ a x = ∫_{-a}^{a} log|x - t| ρ(t) dt` and `ID ρ a = ∫ potD ρ a · ρ` (logarithmic potential and energy of a
   density on `[-a, a]`), `potA a = potD (rhoA a) a`, `IA a = ID (rhoA a) a` for the closed form `rhoA` of FstarDefs;
-* the c-components of the informal proof (8′): `rhoC a c t = c√(a²-t²)/(2π u_c (t²+c²))`, `u_c = √(c²+a²)`, the weight
+* the c-components of the proof notes (8′): `rhoC a c t = c√(a²-t²)/(2π u_c (t²+c²))`, `u_c = √(c²+a²)`, the weight
   `gtil = (1/3, 5/3, 4/3)` on `(0,1), [1,5), [5,∞)`, and the constants `kC a c`, `wC c x` with
   `2 L_c = kC + wC` on the support. -/
 
@@ -31,7 +31,7 @@ def potA (a x : ℝ) : ℝ := potD (rhoA a) a x
 /-- Energy of the comparison density `rhoA a`. -/
 def IA (a : ℝ) : ℝ := ID (rhoA a) a
 
-/-- The weight `g̃` of the informal proof (8′) for layout (4,5,3). -/
+/-- The weight `g̃` of the proof notes (8′) for layout (4,5,3). -/
 def gtil (c : ℝ) : ℝ := if c < 1 then 1/3 else if c < 5 then 5/3 else 4/3
 
 /-- `u_c = √(c² + a²)`. -/

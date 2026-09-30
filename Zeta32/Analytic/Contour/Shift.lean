@@ -5,7 +5,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! The shift rule of the informal proof, §0 for the logistic functional
+/-! The shift rule of the proof notes, §0 for the logistic functional
 `E[φ] = ∫ φ(1/2 + i y) ρ(y) dy`:
 for `F` holomorphic on `0 < Re t < 2` with polynomial growth on `1/2 ≤ Re t ≤ 3/2`,
 `E[F(t+1)] − E[F(t)] = F'(1)`.

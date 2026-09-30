@@ -10,7 +10,7 @@ open Zeta32.Arith.Local
 -- adapted from dtq1997/li2-half-irrationality@d5d8206:Li2Unified/Modular/Base/DecayExpand.lean
 -- and .../Li2Unified/Modular/Base/DecayRankOne.lean (generic Vandermonde rank-one bound, Newton form).
 -- New here: `rank_one_GV_rows`, the same bound after multiplying the rows by p-integral scalars
--- (the informal proof section 4, Lemma 5: "multiplying the last r_p rows by p makes W integral").
+-- (the proof notes section 4, Lemma 5: "multiplying the last r_p rows by p makes W integral").
 
 /-! The generic rank-one (Vandermonde) lemma, in Newton form.
 For H = W + sum_c sum_{t<C c} gamma_{c,t} v(a_{c,t}) v(a_{c,t})^T, v(a)_i = a^i, with W and

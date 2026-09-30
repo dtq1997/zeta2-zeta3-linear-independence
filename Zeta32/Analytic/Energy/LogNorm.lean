@@ -9,7 +9,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! `∫₀^b log|u + ix| du` and the sum–integral comparison of the informal proof (5′).
+/-! `∫₀^b log|u + ix| du` and the sum–integral comparison of the proof notes (5′).
 -- adapted from Li2Unified/Modular/Base/LogNormIntegral.lean, LogNormMonotone.lean, LogNormScaling.lean,
 --   LogNormSumComparison.lean, LogNormSumError.lean (namespace changed only). -/
 

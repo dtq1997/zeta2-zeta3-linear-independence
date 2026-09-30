@@ -5,7 +5,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! The multiplication theorem for `Lbp` (the informal proof, §1 (i)):
+/-! The multiplication theorem for `Lbp` (the proof notes, §1 (i)):
 `∑_{b<p} Lbp (Q(p X - b)) = p · Lbp Q`, proved by shift invariance and the binomial basis
 (a shift-invariant linear functional on `ℚ[X]` vanishes). Consequence for `locPoly`:
 `∑_{b<p} locPoly (r p) (Q(p X - b)) = p² · locPoly r Q`. -/

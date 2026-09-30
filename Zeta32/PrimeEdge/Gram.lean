@@ -5,7 +5,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §6: Gram change of basis
+/-! the proof notes, §6: Gram change of basis
 `det[U_r(φ_a φ_c R_n)] = det(T)^2 · Q_n` for any family of degree `< h`
 (adapted from `det_basis_change` in Arith/Local/Entry.lean and Li₂ Base/Gram.lean). -/
 

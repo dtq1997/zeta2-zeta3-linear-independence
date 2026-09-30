@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 @[expose] public section
 
 /-!
-# The greedy allocation (the informal proof, §3)
+# The greedy allocation (the proof notes, §3)
 
 Columns `b < p` with entries `c_b, c_b + 2, c_b + 4, …` (`c_b = colVal n p b`).
 At step `i` take the smallest untaken entry `gval i`, from column `gpick i`; `galloc i b` is the

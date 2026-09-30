@@ -10,14 +10,14 @@ set_option backward.privateInPublic true
 /-!
 # The entry functional and its local bound
 
-For a numerator `A`, `Lfun r n A = U_r(A / D_{5n})` (the informal proof, §0):
+For a numerator `A`, `Lfun r n A = U_r(A / D_{5n})` (the proof notes, §0):
 `U_r(t^e) = (e+1)B_e + 2rB_{e+1}`, `U_r((t+j)^{-1}) = 2jX + β_j`, i.e.
 
   `Lfun r n A = (∑_j res_j · 2j) X + polynomialMoment r (A /ₘ D_{5n}) + ∑_j res_j β_j`.
 
 * `Lfun_numerator` : `Lfun r n (numerator n m) = X · slope n m + intercept r n m`;
 * `det_basis_change` : a monic basis `f_i` of degree `i` does not change the Hankel determinant;
-* `Lfun_GV` (the informal proof, Lemma 4, entrywise, by class-wise partial fractions instead of the
+* `Lfun_GV` (the proof notes, Lemma 4, entrywise, by class-wise partial fractions instead of the
   Tate-algebra functional): if `A` has at least `e_c` zeros in every class `c` mod `p`
   (`Adm`), `ℓ_c` is the number of poles `-j` (`1 ≤ j ≤ 5n`) in class `c`, `5n < p²`,
   `p ∤ den r` and `deg A ≤ 10n - 2`, then every coefficient of `Lfun r n A` has

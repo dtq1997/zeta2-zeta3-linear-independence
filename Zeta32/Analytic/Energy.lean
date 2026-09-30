@@ -3,7 +3,7 @@ public import Zeta32.Analytic.Energy.Assembly
 
 @[expose] public section
 
-/-! Energy estimate and logarithmic asymptotic (§5.3 of the informal proof).
+/-! Energy estimate and logarithmic asymptotic (§5.3 of the proof notes).
 
 The result is stated in exponential form, `|Q̃_n(C_r)| ≤ exp((−6 + ε) n²)`: a logarithmic form would, with
 Lean's convention `Real.log 0 = 0`, silently assert that `Q̃_n(C_r) ≠ 0`, which the energy method does not give.

@@ -6,7 +6,7 @@ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 @[expose] public section
 
-/-! The component `ρ_c` of the informal proof (8′) in angular coordinates.
+/-! The component `ρ_c` of the proof notes (8′) in angular coordinates.
 
 With `t = a cos θ`, `ρ_c(t) dt` on `(-a, a)` becomes `fC θ dθ` on `(0, 2π)` (each `t` twice), and
 `4π fC = (P(iβ) + P(−iβ))/2 − c/u_c` with `β = a/(u_c + c)` and `P` the Poisson kernel of the unit disc:

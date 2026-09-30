@@ -12,7 +12,7 @@ open Zeta32.Arith.Local
 -- .../Base/DecayResidue.lean (`gramRes_VG`). layout (4,5,3), and the new
 -- bound on the pole values `β_j` and the entry bound for `U_r`.
 
-/-! the informal proof, §7, Lemma 7, one entry. With `K = 5n`, `N = 4n + a + b` and
+/-! the proof notes, §7, Lemma 7, one entry. With `K = 5n`, `N = 4n + a + b` and
 `p_ab = binom(t+n,n)^4 binom(t,a) binom(t,b)` (integer-valued), `S_n D_n^4 E_a E_b = K!·p_ab`;
 (b) the polynomial part is `Σ_{K≤k≤N} c_k/binom(k,K)·binom(t,k-K)` with integer Newton coefficients
 `c_k`, so its integer values have `v_p ≥ -⌊log_p N⌋`; (a) the residues are integers and
@@ -177,7 +177,7 @@ theorem beta_VG (p : ℕ) [Fact p.Prime] (r : ℚ) (j : ℕ) :
 
 /-! ### The entry bound -/
 
-/-- the informal proof, §7: every entry of the binomial Gram matrix has Gauss valuation
+/-- the proof notes, §7: every entry of the binomial Gram matrix has Gauss valuation
 `≥ -3⌊log_p(10n+2)⌋ - v_p(den r)`. -/
 theorem binomGram_GV (p : ℕ) [Fact p.Prime] (r : ℚ) (n : ℕ) (a b : Fin (3*n)) :
     GV p (binomGram r n a b)

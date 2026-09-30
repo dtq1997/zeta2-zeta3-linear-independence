@@ -13,7 +13,7 @@ set_option backward.privateInPublic true
 -- adapted from mo271/Zeta5@f19a196:Apery/Arith/BinomBasis.lean
 -- and .../Apery/Arith/TauBound.lean (mo271/Zeta5 by Moritz Firsching, Apache-2.0).
 -- New here: the `bernoulli'` functional `Lbp` and the bound `VG_polynomialMoment` for the
--- polynomial part of our functional `U_r` (the informal proof, §0: `U_r(t^e) = (e+1)B_e + 2rB_{e+1}`).
+-- polynomial part of our functional `U_r` (the proof notes, §0: `U_r(t^e) = (e+1)B_e + 2rB_{e+1}`).
 
 /-!
 # The Bernoulli functional and the binomial basis

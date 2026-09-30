@@ -7,8 +7,8 @@ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 public import Mathlib.Analysis.Complex.Trigonometric
 
 /-! Shared definitions used across the development.
-Arithmetic: `colVal`, `allocCost`, `GreedyBound` (the informal proof, Lemma 4 in allocation form).
-Analytic: `Rfun`, `wfun`, `heineIntegrand`, `HeineBound` (the informal proof, 5.2 in bound form). -/
+Arithmetic: `colVal`, `allocCost`, `GreedyBound` (the proof notes, Lemma 4 in allocation form).
+Analytic: `Rfun`, `wfun`, `heineIntegrand`, `HeineBound` (the proof notes, 5.2 in bound form). -/
 
 set_option backward.privateInPublic true
 
@@ -20,7 +20,7 @@ open scoped BigOperators
 namespace Zeta32
 noncomputable section
 
-/-- Column value `c_b = 4 N_b − C_b + [b = 0] − 2` of the informal proof, §3, with
+/-- Column value `c_b = 4 N_b − C_b + [b = 0] − 2` of the proof notes, §3, with
 `N_b = #{1 ≤ i ≤ n : i ≡ b}` and `C_b = #{1 ≤ j ≤ 5n : j ≡ b}` modulo `p`. -/
 def colVal (n p b : ℕ) : ℤ :=
   4 * (((Finset.Icc 1 n).filter (fun i => i % p = b)).card : ℤ)
@@ -31,7 +31,7 @@ def colVal (n p b : ℕ) : ℤ :=
 def allocCost (n p : ℕ) (k : ℕ → ℕ) : ℤ :=
   ∑ b ∈ Finset.range p, ((k b : ℤ) * colVal n p b + (k b : ℤ) * ((k b : ℤ) - 1))
 
-/-- the informal proof, Lemma 4 in allocation form: some allocation of the `h = 3n` picks bounds every
+/-- the proof notes, Lemma 4 in allocation form: some allocation of the `h = 3n` picks bounds every
 nonzero coefficient of `Q r n` from below `p`-adically (the greedy allocation does). -/
 def GreedyBound (r : ℚ) (n p : ℕ) : Prop :=
   ∃ k : ℕ → ℕ, (∑ b ∈ Finset.range p, k b) = 3*n ∧
@@ -41,7 +41,7 @@ def GreedyBound (r : ℚ) (n p : ℕ) : Prop :=
 def Rfun (n : ℕ) (t : ℂ) : ℂ :=
   (∏ j ∈ Finset.Icc 1 n, (t + j))^4 / ∏ j ∈ Finset.Icc 1 (5*n), (t + j)
 
-/-- The kernel `w(y) = (π/2) sech²(πy) (2r − 2πi tanh πy)` of the informal proof, 5.1. -/
+/-- The kernel `w(y) = (π/2) sech²(πy) (2r − 2πi tanh πy)` of the proof notes, 5.1. -/
 def wfun (r : ℚ) (y : ℝ) : ℂ :=
   ((Real.pi / 2 / Real.cosh (Real.pi * y) ^ 2 : ℝ) : ℂ) *
     (2 * (r : ℂ) - 2 * Real.pi * Complex.I * (Real.tanh (Real.pi * y) : ℂ))
@@ -51,7 +51,7 @@ def heineIntegrand (r : ℚ) (n : ℕ) (y : Fin (3*n) → ℝ) : ℝ :=
   (∏ l, ‖((1/2 : ℂ) + Complex.I * (y l)) * Rfun n ((1/2 : ℂ) + Complex.I * (y l)) * wfun r (y l)‖) *
     ∏ l, ∏ l' ∈ Finset.univ.filter (fun l' => l < l'), (y l - y l') ^ 2
 
-/-- the informal proof, 5.2 (Heine), in the bound form used by 5.3. -/
+/-- the proof notes, 5.2 (Heine), in the bound form used by 5.3. -/
 def HeineBound (r : ℚ) (n : ℕ) : Prop :=
   |Polynomial.aeval (Cr r) (Q r n)| ≤ (1 / ((3*n).factorial : ℝ)) * ∫ y, heineIntegrand r n y
 

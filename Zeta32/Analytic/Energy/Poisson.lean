@@ -3,7 +3,7 @@ public import Zeta32.Analytic.Energy.Component
 
 @[expose] public section
 
-/-! Potential of the component `ρ_c` (the informal proof (8′), per component):
+/-! Potential of the component `ρ_c` (the proof notes (8′), per component):
 
     2 L_c(x) = kC a c + wC c x   (|x| ≤ a),        2 L_c(x) ≤ kC a c + wC c x   (all x).
 

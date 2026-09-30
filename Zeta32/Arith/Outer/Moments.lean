@@ -8,7 +8,7 @@ set_option backward.privateInPublic true
 
 open Zeta32.Arith.Local
 
-/-! the informal proof section 4, Lemma 5: the p-adic size of the moments `U_r(t^e) = (e+1)B_e + 2rB_{e+1}`
+/-! the proof notes section 4, Lemma 5: the p-adic size of the moments `U_r(t^e) = (e+1)B_e + 2rB_{e+1}`
 (`v_p ≥ -1` always, `p`-integral for `e ≤ p-3`, von Staudt-Clausen), and of the pole constants
 `H_j^{(e)}` and `β_j` (`v_p(β_j) ≥ 0` for `j < p`, `≥ -2` for `p ∣ j`, `≥ -3` otherwise, `j < p²`). -/
 open Polynomial
@@ -141,7 +141,7 @@ lemma H_VG_small {e j : ℕ} (hj : j < p) : VG p (H e j) 0 := by
   obtain ⟨ha1, ha2⟩ := Finset.mem_Icc.mp ha
   exact inv_pow_VG_small ha1 (by omega)
 
-/-- The weight of the constant `min(v_p(2j), v_p(β_j))` in the informal proof, Lemma 5. -/
+/-- The weight of the constant `min(v_p(2j), v_p(β_j))` in the proof notes, Lemma 5. -/
 def betaWt (p j : ℕ) : ℚ := if j < p then 0 else if p ∣ j then -2 else -3
 
 lemma nat_VG_dvd (j : ℕ) (hj : 0 < j) : VG p (j:ℚ) (if p ∣ j then 1 else 0) := by

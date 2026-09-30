@@ -5,7 +5,7 @@ public import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
 @[expose] public section
 
-/-! the informal proof (6′): the scaling `y = n x` of the Heine integral.
+/-! the proof notes (6′): the scaling `y = n x` of the Heine integral.
 
 `∫_{ℝ^h} heine(y) dy = n^h ∫ heine(n x) dx`, `Δ(n x)² = n^{h(h−1)} Δ(x)²`, and (5′) per coordinate; with
 `log F_n ≥ h² log h − (3/2)h² − 2h log h` this gives

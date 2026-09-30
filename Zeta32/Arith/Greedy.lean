@@ -9,15 +9,15 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §3 Lemma 4 (greedy lower bound), proved by class-wise partial fractions
-(Zeta32/Arith/Local/) instead of the Tate-algebra functional of the informal proof, §§1–2.
+/-! the proof notes, §3 Lemma 4 (greedy lower bound), proved by class-wise partial fractions
+(Zeta32/Arith/Local/) instead of the Tate-algebra functional of the proof notes, §§1–2.
 
 With the greedy allocation `galloc n p (3n)` and the monic basis
 `f_i = ∏_{b<p} (t+b)^{galloc n p i b}`, every entry `U_r(f_i f_k R_n)` has `v_p ≥ (π_i + π_k)/2`
 coefficientwise in `X` (`entry_GV`), so `v_p(Q_n) ≥ ∑ π_i = allocCost` (`Q_GV`). The only
 hypotheses used are `p` prime, `p ∤ den r` and `5n < p²`; condition (D), `p ≥ 5` and `p > K`
-of the informal proof, Lemma 4 are not needed by this route. `5n < p²` follows from `n^{2/3} < p` for
-`n ≥ 125`. The draft `greedy_per_prime_bound` was removed (another module owns that bound). -/
+of the proof notes, Lemma 4 are not needed by this route. `5n < p²` follows from `n^{2/3} < p` for
+`n ≥ 125`. -/
 
 open Filter Polynomial Finset
 
@@ -87,7 +87,7 @@ theorem entry_GV {r : ℚ} {n p : ℕ} [hp : Fact p.Prime] (hr : VG p r 0) (hn :
         linarith)
   exact key.mono (by linarith)
 
-/-- **the informal proof, Lemma 4**: `v_p(Q_n) ≥ allocCost` for the greedy allocation. -/
+/-- **the proof notes, Lemma 4**: `v_p(Q_n) ≥ allocCost` for the greedy allocation. -/
 theorem Q_GV {r : ℚ} {n p : ℕ} [hp : Fact p.Prime] (hr : ¬ p ∣ r.den) (hn : 5 * n < p ^ 2) :
     GV p (Zeta32.Q r n) (allocCost n p (galloc n p (3 * n))) := by
   have hp0 : 0 < p := hp.out.pos
@@ -145,7 +145,7 @@ namespace Zeta32.Arith
 
 open Local
 
-/-- **Target (checks/E.lean)**: the informal proof, Lemma 4 in allocation form, for `n^{2/3} < p ≤ 5n`. -/
+/-- the proof notes, Lemma 4 in allocation form, for `n^{2/3} < p ≤ 5n`. -/
 theorem greedy_valuation_bound (r : ℚ) : ∀ᶠ n : ℕ in atTop, ∀ p : ℕ, p.Prime →
     (n:ℝ)^(2/3:ℝ) < p → p ≤ 5*n → ¬ p ∣ r.den → GreedyBound r n p := by
   filter_upwards [eventually_ge_atTop 125] with n hn p hp hlow _ hden

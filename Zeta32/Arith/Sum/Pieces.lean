@@ -5,7 +5,7 @@ public import Mathlib.Tactic.FieldSimp
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.IntervalCases
 
-/-! The pieces of `psiL` and `phiL` (the informal proof, §8.5).
+/-! The pieces of `psiL` and `phiL` (the proof notes, §8.5).
 
 In the variable `u = 1/x` (for a prime, `u = n/p`), the relaxed range `(1/20, 7/3]` of `x` is the range
 `[3/7, 20)` of `u`, cut at the points `m + α` (`m ∈ ℕ`, `α ∈ {0, 1/5, 1/4, 1/3, 2/5, 1/2, 3/5, 2/3, 3/4, 4/5}`)

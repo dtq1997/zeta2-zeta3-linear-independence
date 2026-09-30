@@ -10,7 +10,7 @@ public import Mathlib.Analysis.SpecificLimits.Basic
 @[expose] public section
 
 /-! Zero-mass logarithmic energy inequality for finite measures on `ℂ`
-(the informal proof (12), GLOBAL-INTEGRAL-v1 §4): for finite measures `μ_k` and real weights `w_k` with
+(the proof notes (12), GLOBAL-INTEGRAL-v1 §4): for finite measures `μ_k` and real weights `w_k` with
 `Σ w_k μ_k(ℂ) = 0`, integrable `log|z − w|` and null diagonals,
 `Σ_{k,l} w_k w_l ∫∫ log|z − w| dμ_k dμ_l ≤ 0`.
 

@@ -8,7 +8,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! **S3**: the `X`-free block-diagonal reference matrix of the informal proof, §6 and
+/-! **S3**: the `X`-free block-diagonal reference matrix of the proof notes, §6 and
 its determinant `p^{Σπ} · (unit)`. Blocks: `Ref_{⟨b,i⟩,⟨b,k⟩} = p^{c_b+i+k} w_b V⁰(u^{i+k} r_type)`. -/
 
 open Polynomial

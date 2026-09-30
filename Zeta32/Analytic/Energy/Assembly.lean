@@ -10,7 +10,7 @@ public import Mathlib.Analysis.Real.Pi.Bounds
 
 @[expose] public section
 
-/-! the informal proof (11′), (14′), (15′): tail margin, integration of the configuration bound,
+/-! the proof notes (11′), (14′), (15′): tail margin, integration of the configuration bound,
 and the constant `F* = 9(3/2 − log 3) + (9/2)(ℓ − W̃̄) ≤ −6`. -/
 
 open Real MeasureTheory Polynomial Filter Topology
@@ -225,7 +225,7 @@ theorem eventually_lin_log_le (M : ℝ) {δ : ℝ} (hδ : 0 < δ) :
     _ ≤ δ * n * n := mul_le_mul_of_nonneg_right hl hnpos.le
     _ = δ * (n:ℝ)^2 := by ring
 
-/-- The energy bound in exponential form (the faithful version of the job-I target). -/
+/-- The energy bound in exponential form (unlike a logarithmic form, it does not need `Q̃ ≠ 0`). -/
 theorem energy_bound_exp (r : ℚ) (hH : ∀ n, HeineBound r n) (hF : FstarInput) (ε : ℝ) (hε : 0 < ε) :
     ∀ᶠ n : ℕ in atTop, |aeval (Cr r) (Qtilde r n)| ≤ Real.exp ((-6 + ε) * (n:ℝ)^2) := by
   obtain ⟨a, ha, hm⟩ := exists_massA_eq_one

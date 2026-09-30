@@ -8,7 +8,7 @@ public import Mathlib.Tactic.FinCases
 @[expose] public section
 namespace Zeta32.PrimeEdge
 
-/-! the informal proof, §6: fixed local matrices and exact determinant identities.
+/-! the proof notes, §6: fixed local matrices and exact determinant identities.
 `M_L = [V⁰(u^{i+k} r_L)]`, `M_H = [V⁰(u^{i+k} r_H)]`, `M₀ = [V⁰(u^{i+k} r_0)]` with
 `V⁰(u^e) = e B_{e-1}`, `V⁰((u+m)^{-1}) = 2 H_m^{(3)}` and
 `r_L = u³/((u+1)(u+2)(u+3)(u+4))`, `r_H = u³/((u+1)(u+2)(u+3))`, `r_0 = u/((u+1)(u+2)(u+3)(u+4))`

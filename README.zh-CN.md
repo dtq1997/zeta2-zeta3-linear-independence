@@ -16,7 +16,7 @@ $`1`$、$`\zeta(2)`$、$`\zeta(3)`$ 在 $`\mathbb{Q}`$ 上线性无关：若 $`a
 
 等价地说：$`\zeta(2)`$ 是无理数，并且对每个有理数 $`r`$，$`\zeta(3)-r\,\zeta(2)`$ 都是无理数。
 
-$`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(2)=\pi^2/6`$ 的无理性是经典结果。Gutnik [10] 证明了：对每个有理数 $`q`$，$`-3\zeta(3)+q\,\zeta(2)`$ 与 $`\zeta(2)-2q\log 2`$ 中至少有一个是无理数。Calegari、Dimitrov、Tang [11] 证明了 $`1,\zeta(2),L(2,\chi_{-3})`$ 在 $`\mathbb{Q}`$ 上线性无关。
+$`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(2)=\pi^2/6`$ 的无理性是经典结果。Gutnik [10] 证明了：对每个有理数 $`q`$，$`-3\zeta(3)+q\,\zeta(2)`$ 与 $`\zeta(2)-2q\log 2`$ 中至少有一个是无理数。Calegari、Dimitrov、Tang [11] 证明了 $`1,\zeta(2),L(2,\chi_{-3})`$ 在 $`\mathbb{Q}`$ 上线性无关。Dauguet 与 Zudilin [12] 构造了 $`\zeta(2)`$、$`\zeta(3)`$ 的同时有理逼近，并对 $`1,\zeta(2),\zeta(3)`$ 的某些有理系数线性型给出了下界。据我们所知，此前没有这一结论的证明：2026 年 9 月 29 日的检索（arXiv、zbMATH Open 与一般网络搜索）没有找到，检索范围以外的新颖性未知。
 
 ## 形式化与验证
 
@@ -27,7 +27,7 @@ $`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(
       LinearIndependent ℚ ![(1 : ℂ), riemannZeta 2, riemannZeta 3]
   ```
 
-  陈述只用到 Mathlib 的定义（`riemannZeta` 与 `LinearIndependent`），不含本项目自己的任何定义。
+  陈述只用到 Mathlib 的定义（`riemannZeta` 与 `LinearIndependent`），不含本项目自己的任何定义。决定其含义的 Mathlib 定义原文摘录在 [`docs/mathlib-definitions.md`](docs/mathlib-definitions.md)。
 
   另一个定理 `one_zeta_two_zeta_three_linearIndependent_series` 把两个级数直接写出来，陈述同一结论，读它只需要实数无穷级数的定义：
 
@@ -38,7 +38,7 @@ $`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(
       a = 0 ∧ b = 0 ∧ c = 0
   ```
 - 两个定理都只依赖 Lean 的三条标准公理 `propext`、`Classical.choice`、`Quot.sound`。
-- 另用 [comparator](https://github.com/leanprover/comparator) 做了独立验收：以 [`Challenge.lean`](Challenge.lean) 为题面核对陈述，并用 Lean 内核与 [nanoda](https://github.com/ammkrn/nanoda_lib) 两个内核分别重新检查全部证明。复现方法见下文。
+- 另用 [comparator](https://github.com/leanprover/comparator) 做了独立验收：以 [`Challenge.lean`](Challenge.lean) 为题面核对两个陈述，并用 Lean 内核与 [nanoda](https://github.com/ammkrn/nanoda_lib) 两个内核分别重新检查全部证明。复现方法见下文。
 - 工具链：Lean `v4.35.0-rc3`，Mathlib `c55e6e78`。构建方法：
 
   ```sh
@@ -50,7 +50,7 @@ $`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(
 
 ### 用 comparator 复现独立验收
 
-comparator 的配置是 [`comparator.json`](comparator.json)：题面模块 `Challenge`，解答模块 `Solution`，要核对的定理 `one_zeta_two_zeta_three_linearIndependent`，只允许三条标准公理，并启用 nanoda。
+comparator 的配置是 [`comparator.json`](comparator.json)：题面模块 `Challenge`，解答模块 `Solution`，要核对的定理 `one_zeta_two_zeta_three_linearIndependent` 与 `one_zeta_two_zeta_three_linearIndependent_series`，只允许三条标准公理，并启用 nanoda。
 
 各工具（comparator、lean4export、nanoda、landrun）的构建方法与安全前提见 [comparator 的 README](https://github.com/leanprover/comparator)。landrun 依赖 Linux 的 Landlock 沙箱，因此只能在 Linux 上运行。
 
@@ -65,7 +65,7 @@ lake env /path/to/comparator comparator.json
 
 通过时，输出中会分别有 `Nanoda kernel accepts the solution` 和 `Lean default kernel accepts the solution` 两行，最后一行是 `Your solution is okay!`。
 
-我们自己的检查用的是 Palomar 流水线（PalomarRegistry/PalomarSubmission，提交 `65f0154`）的验证脚本，在上述笔记本电脑上运行，没有使用 Linux 沙箱。这些脚本调用 comparator，并加上第三个内核 con-ron。一次检查用时 134 秒，内存峰值约 4.3 GiB。
+我们自己的检查用的是 Palomar 流水线（PalomarRegistry/PalomarSubmission，提交 `65f0154`）的验证脚本，在上述笔记本电脑上运行，没有使用 Linux 沙箱。这些脚本调用 comparator，并加上第三个内核 con-ron。一次检查用时约 6 到 7 分钟，内存峰值约 3.4 GiB。
 
 ## 致谢
 
@@ -75,7 +75,7 @@ lake env /path/to/comparator comparator.json
 
 ## 许可
 
-本项目采用 Apache License 2.0，见 [LICENSE](LICENSE)。项目中改编自其他项目的代码及其来源见 [NOTICE](NOTICE)，并在对应源文件的文件头中逐一注明。
+本项目采用 Apache License 2.0，见 [LICENSE](LICENSE)。项目中改编自其他项目的代码及其来源见 [NOTICE](NOTICE)，并在对应源文件的注释中逐一注明。
 
 ## 参考文献
 
@@ -98,3 +98,5 @@ lake env /path/to/comparator comparator.json
     [doi:10.4064/aa-42-3-255-264](https://doi.org/10.4064/aa-42-3-255-264)
 11. F. Calegari, V. Dimitrov, Y. Tang, *The linear independence of 1, ζ(2), and L(2,χ₋₃)*.
     [arXiv:2408.15403](https://arxiv.org/abs/2408.15403)
+12. S. Dauguet, W. Zudilin, *On simultaneous diophantine approximations to ζ(2) and ζ(3)*, J. Number Theory 145 (2014), 362–387.
+    [arXiv:1401.5322](https://arxiv.org/abs/1401.5322)

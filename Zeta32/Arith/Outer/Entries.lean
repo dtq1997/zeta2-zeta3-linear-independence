@@ -9,7 +9,7 @@ set_option backward.privateInPublic true
 
 open Zeta32.Arith.Local
 
-/-! the informal proof section 4, Lemma 5, first step (partial fractions).
+/-! the proof notes section 4, Lemma 5, first step (partial fractions).
 With `ρ_j = Res_{t=-j} R_n = rs n j`, the Hankel entry is
   `U_r(t^{a+b} R_n) = U_r(q_{a+b}) + Σ_j ρ_j (2jX + β_j) (-j)^a (-j)^b`,
 where `q_m = polynomialPart n m` has integer coefficients and degree `m - n`.
@@ -278,7 +278,7 @@ theorem entry_eq (r : ℚ) (n : ℕ) (a b : Fin (3*n)) :
   simp only [map_mul, map_pow, map_neg, map_natCast, map_ofNat]
   ring
 
-/-- Node weight of the informal proof, Lemma 5: `w_j = v_p(ρ_j) + betaWt`, and a large dummy value for the
+/-- Node weight of the proof notes, Lemma 5: `w_j = v_p(ρ_j) + betaWt`, and a large dummy value for the
 cancelled nodes `j ≤ n` (where `ρ_j = 0`). -/
 def wv (n p j : ℕ) : ℚ :=
   if j ≤ n then 15 * (n:ℚ) + 1 else

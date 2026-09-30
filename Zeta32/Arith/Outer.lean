@@ -27,18 +27,18 @@ end Zeta32.Outer
 
 namespace Zeta32.Arith
 
-/-! the informal proof, §4 Lemma 5 and §8.2 Lemma 9: for every prime `p` with `7n < 3p ≤ 15n`, `p ∤ den r`,
+/-! the proof notes, §4 Lemma 5 and §8.2 Lemma 9: for every prime `p` with `7n < 3p ≤ 15n`, `p ∤ den r`,
   `cost r n p ≤ n φ(p/n) + 5`.
 The Gauss bound `outer_valuation_bound` is Lemma 5 with the class costs of Lemma 9 inserted; the
 arithmetic comparison with `n φ(p/n)` is `outer_arith`. Both hold for every `n` (the hypotheses force
-`n ≥ 1`, `p ≥ 3`, `p > 2n`, `p² > 5n`); `outer_per_prime_bound` is the eventual form required by Job C. -/
+`n ≥ 1`, `p ≥ 3`, `p > 2n`, `p² > 5n`); `outer_per_prime_bound` is the eventual form used by `Arith.arith_of_parts`. -/
 open Polynomial Zeta32.Outer
 
 /-- The outer class sum, `Σ_c gcl`, in closed form. -/
 def outerClassBound (n p : ℕ) : ℚ :=
   -4 - ((5*n - 2*p : ℕ) : ℚ) - 4 * ((min (p - 1 - n) (5*n - p - n) : ℕ) : ℚ)
 
-/-- the informal proof, Lemma 5 (with Lemma 9's class costs) in the outer range: every coefficient of `Qtilde r n`
+/-- the proof notes, Lemma 5 (with Lemma 9's class costs) in the outer range: every coefficient of `Qtilde r n`
 has `v_p ≥ normVal + Σ_classes - r_p`, `r_p = 5n + 1 - p`. -/
 theorem outer_valuation_bound (r : ℚ) (n p : ℕ) (hp : p.Prime) (h73 : 7*n < 3*p) (hp5 : p ≤ 5*n)
     (hden : ¬ p ∣ r.den) :
@@ -165,7 +165,7 @@ theorem outer_cost_bound (r : ℚ) (n p : ℕ) (hp : p.Prime) (h73 : 7*n < 3*p) 
   (cost_le_of_GV (Qtilde_ne_zero hQ) (outer_valuation_bound r n p hp h73 hp5 hden)).trans
     (outer_arith n p h73 hp5)
 
-/-- the informal proof, §8.2, Lemma 9, in the form used by `ArithSum.arith_sum` (hypothesis `h2`). -/
+/-- the proof notes, §8.2, Lemma 9, in the form used by `ArithSum.arith_sum` (hypothesis `h2`). -/
 theorem outer_per_prime_bound (r : ℚ) : ∀ᶠ n : ℕ in Filter.atTop, ∀ p : ℕ, p.Prime →
     7*n < 3*p → p ≤ 5*n → ¬ p ∣ r.den → Q r n ≠ 0 →
     cost r n p ≤ n * ArithSum.phiL ((p:ℝ)/(n:ℝ)) + 5 :=

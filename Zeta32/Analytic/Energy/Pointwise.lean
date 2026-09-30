@@ -8,7 +8,7 @@ public import Mathlib.Analysis.Complex.ExponentialBounds
 
 @[expose] public section
 
-/-! the informal proof (5′), layout (4,5,3): with `t = 1/2 + iy`, `y = nx`,
+/-! the proof notes (5′), layout (4,5,3): with `t = 1/2 + iy`, `y = nx`,
 
     S_n |t R_n(t) w(y)| ≤ exp(c₀ + 7 log(n+1)) (1+|x|)^7 exp(−3n W̃(|x|)),
 
@@ -145,7 +145,7 @@ theorem psiH_nonneg (r : ℚ) (n : ℕ) (y : ℝ) : 0 ≤ psiH r n y := norm_non
 /-- The constant `c₀ = 7 + log(4π(|r|+π)) + 6 log 2`. -/
 def cPt (r : ℚ) : ℝ := 7 + Real.log (4 * π * (|(r : ℝ)| + π)) + 6 * Real.log 2
 
-/-- the informal proof (5′). -/
+/-- the proof notes (5′). -/
 theorem pointwise_bound (r : ℚ) (n : ℕ) (hn : 1 ≤ n) (x : ℝ) :
     (Sn n : ℝ) * psiH r n ((n : ℝ) * x) ≤
       Real.exp (cPt r + 7 * Real.log ((n : ℝ) + 1)) *

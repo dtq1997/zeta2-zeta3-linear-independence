@@ -16,7 +16,7 @@ $`1`$, $`\zeta(2)`$ and $`\zeta(3)`$ are linearly independent over $`\mathbb{Q}`
 
 Equivalently, $`\zeta(2)`$ is irrational, and $`\zeta(3)-r\,\zeta(2)`$ is irrational for every rational number $`r`$.
 
-For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9]. The irrationality of $`\zeta(2)=\pi^2/6`$ is classical. Gutnik [10] proved that for every rational $`q`$ at least one of $`-3\zeta(3)+q\,\zeta(2)`$ and $`\zeta(2)-2q\log 2`$ is irrational. Calegari, Dimitrov and Tang [11] proved that $`1,\zeta(2),L(2,\chi_{-3})`$ are linearly independent over $`\mathbb{Q}`$.
+For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9]. The irrationality of $`\zeta(2)=\pi^2/6`$ is classical. Gutnik [10] proved that for every rational $`q`$ at least one of $`-3\zeta(3)+q\,\zeta(2)`$ and $`\zeta(2)-2q\log 2`$ is irrational. Calegari, Dimitrov and Tang [11] proved that $`1,\zeta(2),L(2,\chi_{-3})`$ are linearly independent over $`\mathbb{Q}`$. Dauguet and Zudilin [12] constructed simultaneous rational approximations to $`\zeta(2)`$ and $`\zeta(3)`$ and bounded from below certain linear forms in $`1,\zeta(2),\zeta(3)`$ with rational coefficients. We are not aware of an earlier proof of this statement: a search on 29 September 2026 (arXiv, zbMATH Open and general web search) found none, and its novelty beyond that search is unknown.
 
 ## Formalization and verification
 
@@ -27,7 +27,7 @@ For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9].
       LinearIndependent ℚ ![(1 : ℂ), riemannZeta 2, riemannZeta 3]
   ```
 
-  The statement uses only Mathlib definitions (`riemannZeta` and `LinearIndependent`) and none of this project's own.
+  The statement uses only Mathlib definitions (`riemannZeta` and `LinearIndependent`) and none of this project's own. The Mathlib definitions that fix its meaning are quoted in [`docs/mathlib-definitions.md`](docs/mathlib-definitions.md).
 
   A second theorem, `one_zeta_two_zeta_three_linearIndependent_series`, states the same result with the two series written out, so that reading it needs no definition beyond real infinite sums:
 
@@ -50,7 +50,7 @@ For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9].
 
 ### Reproducing the independent check with comparator
 
-The comparator configuration is [`comparator.json`](comparator.json): challenge module `Challenge`, solution module `Solution`, theorem to check `one_zeta_two_zeta_three_linearIndependent`, only the three standard axioms permitted, and nanoda enabled.
+The comparator configuration is [`comparator.json`](comparator.json): challenge module `Challenge`, solution module `Solution`, theorems to check `one_zeta_two_zeta_three_linearIndependent` and `one_zeta_two_zeta_three_linearIndependent_series`, only the three standard axioms permitted, and nanoda enabled.
 
 See [comparator's README](https://github.com/leanprover/comparator) for how to build comparator, lean4export, nanoda and landrun, and for the assumptions behind the check. landrun relies on the Linux Landlock sandbox, so the check runs only on Linux.
 
@@ -65,7 +65,7 @@ lake env /path/to/comparator comparator.json
 
 On success the output contains the two lines `Nanoda kernel accepts the solution` and `Lean default kernel accepts the solution`, and its last line is `Your solution is okay!`.
 
-Our own check used the verification scripts of the Palomar pipeline (PalomarRegistry/PalomarSubmission at `65f0154`), run on the laptop above without the Linux sandbox. These scripts run comparator and add a third kernel, con-ron. One check took 134 seconds, with a peak memory use of about 4.3 GiB.
+Our own check used the verification scripts of the Palomar pipeline (PalomarRegistry/PalomarSubmission at `65f0154`), run on the laptop above without the Linux sandbox. These scripts run comparator and add a third kernel, con-ron. One check took about 6 to 7 minutes, with a peak memory use of about 3.4 GiB.
 
 ## Acknowledgements
 
@@ -75,7 +75,7 @@ This project was completed with the assistance of Anthropic's Claude Opus 5.5 an
 
 ## License
 
-This project is licensed under the Apache License 2.0; see [LICENSE](LICENSE). Code adapted from other projects and its sources are listed in [NOTICE](NOTICE), and each affected source file names its source in its header.
+This project is licensed under the Apache License 2.0; see [LICENSE](LICENSE). Code adapted from other projects and its sources are listed in [NOTICE](NOTICE), and each affected source file names its source in a comment.
 
 ## References
 
@@ -98,3 +98,5 @@ This project is licensed under the Apache License 2.0; see [LICENSE](LICENSE). C
     [doi:10.4064/aa-42-3-255-264](https://doi.org/10.4064/aa-42-3-255-264)
 11. F. Calegari, V. Dimitrov, Y. Tang, *The linear independence of 1, ζ(2), and L(2,χ₋₃)*.
     [arXiv:2408.15403](https://arxiv.org/abs/2408.15403)
+12. S. Dauguet, W. Zudilin, *On simultaneous diophantine approximations to ζ(2) and ζ(3)*, J. Number Theory 145 (2014), 362–387.
+    [arXiv:1401.5322](https://arxiv.org/abs/1401.5322)

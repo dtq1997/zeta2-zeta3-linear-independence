@@ -12,9 +12,8 @@ noncomputable def psiL (x : ℝ) : ℝ :=
 noncomputable def phiL (x : ℝ) : ℝ :=
   if x ≤ 5/2 then 6 - x else if x ≤ 3 then 24 - 7*x else if x ≤ 4 then 18 - 5*x else 2 - x
 
-/- The former `sorry` placeholder `arith_sum` is removed from this file: the theorem
-`Zeta32.ArithSum.arith_sum` (same statement) is proved in `Zeta32/Arith/Sum/Main.lean`, which imports the
-definitions above. Import `Zeta32.Arith.Sum.Main` (or the root module `ArithSum`) to use it. -/
+/- The theorem `Zeta32.ArithSum.arith_sum` is proved in `Zeta32/Arith/Sum/Main.lean`, which imports the
+definitions above. -/
 
 end Zeta32.ArithSum
 

@@ -8,7 +8,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! **S2b-1**: the informal proof, Lemma 1 / Corollary 2 (the p-adic distribution
+/-! **S2b-1**: the proof notes, Lemma 1 / Corollary 2 (the p-adic distribution
 formula for `U_r`), in the truncated rational form used by §6.
 
 Exact statement behind it (in `ℚ_p`): `U_r(f) = p^{-2} Σ_{b<p} V_Y(g_b)` with `Y = p³X + C_p`,

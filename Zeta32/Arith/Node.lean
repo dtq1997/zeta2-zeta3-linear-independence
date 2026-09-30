@@ -7,8 +7,8 @@ public import Mathlib.Data.Nat.Prime.Int
 public import Mathlib.Data.Nat.Factorization.Basic
 public import Mathlib.NumberTheory.Padics.PadicVal.Basic
 
-/-! The arithmetic node (the informal proof, §8 opening and §9): from the per-prime bounds
-(jobs E, F, G, K as hypotheses) and `ArithSum.arith_sum`,
+/-! The arithmetic node (the proof notes, §8 opening and §9): from the per-prime bounds
+(taken as hypotheses) and `ArithSum.arith_sum`,
 `∀ ε > 0, ∀ᶠ n, Q r n ≠ 0 → log d̃_n ≤ (283/50 + ε) n²`.
 
 Bridge: for `Q r n ≠ 0`, `P = d̃ Q̃` is primitive, so `v_p(d̃) = −min_k v_p(Q̃_k) = cost r n p` for every

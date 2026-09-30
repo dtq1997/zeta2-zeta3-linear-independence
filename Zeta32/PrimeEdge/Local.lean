@@ -7,7 +7,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof, §1 (Corollary 2): the local functional on a disc, in a
+/-! the proof notes, §1 (Corollary 2): the local functional on a disc, in a
 finite rational form.
 
 For `0 ≤ b < p` put `t = p u - b` (the variable `u` is written `X`). For `f = A / D_{5n}` the

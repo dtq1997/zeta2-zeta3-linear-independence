@@ -5,8 +5,8 @@ public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 @[expose] public section
 
-/-! Shared definitions for the analytic constant F* of layout (4,5,3) (the informal proof, 5.3 (8′),
-the informal proof, 5.4). Mathlib only. `FstarPoints` implies `FstarInput`, which the
+/-! Shared definitions for the analytic constant F* of layout (4,5,3) (the proof notes, 5.3 (8′),
+the proof notes, 5.4). Mathlib only. `FstarPoints` implies `FstarInput`, which the
 energy bound uses. -/
 
 namespace Zeta32

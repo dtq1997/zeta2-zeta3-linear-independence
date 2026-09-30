@@ -8,7 +8,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! Rectangle identity behind the shift rule of the informal proof, §0/§5.1:
+/-! Rectangle identity behind the shift rule of the proof notes, §0/§5.1:
 for `F` holomorphic on the strip `0 < Re t < 2`,
 `∮_{∂([1/2,3/2]×[-T,T])} F(t) π²/sin²(πt) dt = 2πi F'(1)`.
 Proof: `π²/sin²(πt) = -(π cot πt)'`, so by the fundamental theorem of calculus on the

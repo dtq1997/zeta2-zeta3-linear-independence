@@ -3,7 +3,7 @@ public import Zeta32.Interfaces
 public import Mathlib.Algebra.Order.Interval.Finset.SuccPred
 public import Mathlib.Data.Nat.SuccPred
 
-/-! the informal proof, §8.1 (ii): the column values `colVal n p b` through the residues
+/-! the proof notes, §8.1 (ii): the column values `colVal n p b` through the residues
 `r₀ = n % p`, `s₀ = 5n % p`, and the closed forms of `Σ_b c_b` and `Σ_b c_b²`
 (the column multiset `β+1` once, `β+3` μ times, `β−1` (s₀−μ) times, `β+4` (r₀−μ) times, `β` otherwise). -/
 

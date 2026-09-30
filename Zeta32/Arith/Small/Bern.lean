@@ -8,9 +8,9 @@ set_option backward.privateInPublic true
 
 open Zeta32.Arith.Local
 
-/-! the informal proof, §7 (c), the polynomial part of `U_r`.
+/-! the proof notes, §7 (c), the polynomial part of `U_r`.
 
-`Bf f = Σ f_e B'_e` (`bernoulli'`, `B'_1 = +1/2`) is the functional `B` of the informal proof, §0 on polynomials.
+`Bf f = Σ f_e B'_e` (`bernoulli'`, `B'_1 = +1/2`) is the functional `B` of the proof notes, §0 on polynomials.
 * shift rule `B(f(t+1)) = B(f) + f'(1)` (from `sum_bernoulli'`);
 * hence `B(binom(t,k)) = binom(t,k+1)'(1)`, so `v_p(B(binom(t,k))) ≥ -⌊log_p(k+1)⌋`
   (this replaces the closed form `(-1)^{k+1}/(k(k+1))`; only the valuation is used);
@@ -66,7 +66,7 @@ lemma Bf_X_add_one_pow (m : ℕ) : Bf ((X + 1 : ℚ[X]) ^ m) = bernoulli' m + m 
   rw [sum_bernoulli']
   ring
 
-/-- Shift rule `B(f(t+1)) = B(f) + f'(1)` (the informal proof, §0). -/
+/-- Shift rule `B(f(t+1)) = B(f) + f'(1)` (the proof notes, §0). -/
 theorem Bf_shift (f : ℚ[X]) : Bf (f.comp (X + 1)) = Bf f + (derivative f).eval 1 := by
   induction f using Polynomial.induction_on' with
   | add f g hf hg =>
@@ -129,7 +129,7 @@ lemma polynomialMoment_C_mul (r c : ℚ) (f : ℚ[X]) :
     Polynomial.sum, Polynomial.sum, Finset.mul_sum]
   exact Finset.sum_congr rfl fun k _ => by ring
 
-/-- `U_r` on polynomials: `polynomialMoment r g = B((t g)') + 2r B(t g)` (the informal proof, §0). -/
+/-- `U_r` on polynomials: `polynomialMoment r g = B((t g)') + 2r B(t g)` (the proof notes, §0). -/
 theorem polynomialMoment_eq_Bf (r : ℚ) (g : ℚ[X]) :
     polynomialMoment r g = Bf (derivative (X * g)) + 2 * r * Bf (X * g) := by
   induction g using Polynomial.induction_on' with
@@ -147,7 +147,7 @@ lemma VG_two_mul_rat (p : ℕ) [Fact p.Prime] (r : ℚ) :
   have h := (VG.natCast (p := p) 2).mul (VG.ratDen (p := p) r)
   simpa using h
 
-/-- the informal proof, §7 (c): `v_p(U_r(g)) ≥ β - 2⌊log_p(d+2)⌋ - v_p(den r)` for `deg g ≤ d` and
+/-- the proof notes, §7 (c): `v_p(U_r(g)) ≥ β - 2⌊log_p(d+2)⌋ - v_p(den r)` for `deg g ≤ d` and
 `v_p(g(z)) ≥ β` on `ℤ`. -/
 theorem polynomialMoment_VG (p : ℕ) [Fact p.Prime] (r : ℚ) {g : ℚ[X]} {d : ℕ}
     (hd : g.natDegree ≤ d) (β : ℚ) (hv : ∀ z : ℤ, VG p (g.eval (z : ℚ)) β) :

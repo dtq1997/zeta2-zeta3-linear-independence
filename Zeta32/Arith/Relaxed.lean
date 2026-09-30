@@ -3,9 +3,9 @@ public import Zeta32.Arith.Profiles
 public import Zeta32.Arith.Relaxed.Basic
 public import Zeta32.Arith.Relaxed.Columns
 
-/-! the informal proof, §8.1, Lemma 8 (relaxed greedy): for a prime `p ≥ 7` with
+/-! the proof notes, §8.1, Lemma 8 (relaxed greedy): for a prime `p ≥ 7` with
 `5n < p²` and `3p ≤ 7n`, if some allocation of the `3n` picks bounds every nonzero coefficient of
-`Q r n` (`GreedyBound`, i.e. the informal proof, Lemma 4), then `cost ≤ n ψ(p/n) + 3/4`.
+`Q r n` (`GreedyBound`, i.e. the proof notes, Lemma 4), then `cost ≤ n ψ(p/n) + 3/4`.
 Steps: (i) `Relaxed.Basic.allocation_relaxation`; (ii) `Relaxed.Columns.sum_colVal(_sq)` and
 `Relaxed.Basic.padicValRat_scale_one_level`; (iii)–(iv) the identity (8.1)+(8.2) in the combined
 form `−norm_p − relax = n ψ(x) + E_p`, `E_p = (p − 12n − 8r₀ + 2s₀ − 1)/(4p)`; (v) `E_p < 3/4`. -/
@@ -89,7 +89,7 @@ lemma psiL_eq (n p : ℕ) (_hn : 0 < n) (hp : 0 < p) :
   unfold ArithSum.psiL
   simp only [h1, h5, h3, hm]
 
-/-- The algebraic core of the informal proof, §8.1 (iii)–(v), over free real symbols with the relations
+/-- The algebraic core of the proof notes, §8.1 (iii)–(v), over free real symbols with the relations
 `n = pA + r₀`, `5n = pL + s₀`, `3n = pM + t₀`: identities (8.1), (8.2) and `E_p < 3/4`. -/
 lemma relaxed_algebra (n p A L M r₀ s₀ t₀ μ cst alloc v : ℝ) (hp : 0 < p) (hn : 0 < n)
     (eA : n = p * A + r₀) (eL : 5 * n = p * L + s₀) (eM : 3 * n = p * M + t₀)
@@ -119,7 +119,7 @@ lemma relaxed_algebra (n p A L M r₀ s₀ t₀ μ cst alloc v : ℝ) (hp : 0 < 
     nlinarith
   linarith
 
-/-- the informal proof, §8.1, Lemma 8 (per prime, relaxed greedy). -/
+/-- the proof notes, §8.1, Lemma 8 (per prime, relaxed greedy). -/
 theorem relaxed_per_prime (r : ℚ) (n p : ℕ) (hp : p.Prime) (h7 : 7 ≤ p) (hsq : 5*n < p^2)
     (hQ : Q r n ≠ 0) (h73 : 3*p ≤ 7*n) (hG : GreedyBound r n p) :
     cost r n p ≤ n * ArithSum.psiL ((p:ℝ)/(n:ℝ)) + 3/4 := by
@@ -127,7 +127,7 @@ theorem relaxed_per_prime (r : ℚ) (n p : ℕ) (hp : p.Prime) (h7 : 7 ≤ p) (h
   have hn0 : 0 < n := by omega
   have hpR : (0:ℝ) < p := by exact_mod_cast hp0
   have hnR : (0:ℝ) < n := by exact_mod_cast hn0
-  -- the allocation provided by `GreedyBound` (the informal proof, Lemma 4)
+  -- the allocation provided by `GreedyBound` (the proof notes, Lemma 4)
   have hcost := cost_le_of_scaled_greedy r n p hp hQ hG
   have hk : (∑ b ∈ Finset.range p, (Classical.choose hG) b) = 3*n :=
     (Classical.choose_spec hG).1

@@ -12,7 +12,7 @@ set_option backward.privateInPublic true
 
 /-! The logistic density `ρ(y) = (π/2) sech²(πy)` on the line `t = 1/2 + i y`, its
 derivative, the kernel `w = 2rρ + iρ'` of `Interfaces.lean`, and integrability of
-polynomially bounded functions against them (the informal proof, 5.1). -/
+polynomially bounded functions against them (the proof notes, 5.1). -/
 
 open MeasureTheory Set Filter Topology
 

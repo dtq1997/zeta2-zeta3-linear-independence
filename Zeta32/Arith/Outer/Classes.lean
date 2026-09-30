@@ -5,7 +5,7 @@ set_option backward.privateInPublic true
 
 @[expose] public section
 
-/-! the informal proof section 8.2, Lemma 9: the three kinds of residue classes and their class costs.
+/-! the proof notes section 8.2, Lemma 9: the three kinds of residue classes and their class costs.
 
 The poles `j ∈ [1, 5n]` are regrouped by `c = (j-1) mod p` (the class of `j` is `c+1 mod p`), each class
 listed in decreasing `j`: `jn c t = c + 1 + p (Ccl c - 1 - t)`.  Along a class the node weight `wv` is

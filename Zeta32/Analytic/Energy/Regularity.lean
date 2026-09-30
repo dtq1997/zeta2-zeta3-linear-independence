@@ -6,8 +6,8 @@ public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
 @[expose] public section
 
-/-! Regularity of the comparison density `rhoA a` on `(-a, a)` (the informal proof (8′),
-"density near 0"): `rhoA a t = fc a |t| − log|t|/(6π)` with `fc` continuous (another module, Fstar/Rho.lean), hence
+/-! Regularity of the comparison density `rhoA a` on `(-a, a)` (the proof notes (8′),
+"density near 0"): `rhoA a t = fc a |t| − log|t|/(6π)` with `fc` continuous (Fstar/Rho.lean), hence
 `rhoA`, `rhoA²` and `log|x − ·| · rhoA` are integrable (via `log²` integrable, AM–GM). -/
 
 open Real MeasureTheory Set Filter

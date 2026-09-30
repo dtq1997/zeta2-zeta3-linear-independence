@@ -8,7 +8,7 @@ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 @[expose] public section
 
 /-! The integrals over `c ∈ (0, ∞)` with the weight `g̃ = (1/3, 5/3, 4/3)`
-(the informal proof (8′), the informal proof, Lemma 12):
+(the proof notes (8′), the proof notes, Lemma 12):
 
     ∫ g̃ ρ_c(t) dc = rhoA a t,   ∫ g̃ (1 − c/u_c)/2 dc = massA a,   ∫ g̃ w_c(x) dc = Wt |x|,
     ∫ g̃ kC a c dc = ellA a + 2 log(a/2)(massA a − 1).
