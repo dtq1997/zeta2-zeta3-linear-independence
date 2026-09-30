@@ -5,24 +5,14 @@ project:
   name: "Linear independence of 1, ζ(2), ζ(3) over ℚ"
   description: >-
     A Lean formalization of the linear independence of 1, ζ(2) and ζ(3)
-    over ℚ; equivalently, ζ(2) is irrational, and ζ(3) − r ζ(2) is
-    irrational for every rational number r.
+    over ℚ.
     The proof is inspired by A. Fauzan's work on the irrationality of
     ζ(5) and builds on the Lean formalization of the irrationality of
-    Li₂(1/2) in dtq1997/li2-half-irrationality.
-    The central idea is to establish the irrationality of a real number x
-    by constructing a sequence of integer polynomials P_n whose values
-    P_n(x) decay rapidly as n tends to infinity, while for every rational
-    q, P_n(q) ≠ 0 for infinitely many n. Here x = ζ(3) − r ζ(2), and the
-    polynomials Q_n with rational coefficients are Hankel determinants of
-    an umbral functional built from Bernoulli numbers and the values ζ(2),
-    ζ(3). A Heine–Andreief identity and a logarithmic energy estimate
-    provide rapid decay of Q_n(x) as n tends to infinity. Estimates of
-    p-adic valuations, together with the prime number theorem, ensure
-    that the values P_n(x) of the corresponding primitive integer
-    polynomials also decay rapidly as n tends to infinity, completing the
-    proof. The irrationality of ζ(2) = π²/6 is proved by adapting
-    Mathlib's proof that π is irrational.
+    Li₂(1/2), registered in Palomar as PALOMAR-2026-09-30-000013. It shows
+    that the method of that proof can be pushed further.
+    The main difference from the Li₂(1/2) proof is that the rational
+    functions appearing here are allowed to have poles of order two. The
+    remaining details are similar, with some minor modifications.
     The compared theorem depends on propext, Classical.choice and
     Quot.sound and on nothing else, and there is no sorry outside the
     one deliberate hole in Challenge.lean.
@@ -57,8 +47,7 @@ fidelity:
   divergences: >-
     The formal statement uses Mathlib's riemannZeta and LinearIndependent,
     with the three numbers viewed as complex numbers.
-    This is an original proof using methods adapted from the cited
-    work on ζ(5).
+    The proof uses methods adapted from the cited work on ζ(5).
 
 sources:
   - title: "Linear independence of 1, ζ(2), ζ(3) over ℚ"
@@ -66,12 +55,7 @@ sources:
     id: "https://github.com/dtq1997/zeta2-zeta3-linear-independence"
     type: "original-proof"
     relationship: "other"
-    note: >-
-      The proof is first presented in this repository. A literature search
-      (2026-09-29: arXiv, zbMATH Open and general web search) found no
-      earlier proof that ζ(3) − r ζ(2) is irrational for a rational r ≠ 0,
-      and no earlier proof of the linear independence of 1, ζ(2), ζ(3)
-      over ℚ. Novelty beyond that search is not established.
+    note: "The proof is presented in this repository."
 
   - title: "ζ(5) is irrational"
     authors: ["Aabir Fauzan"]
@@ -106,9 +90,19 @@ sources:
     relationship: "background"
 
 related_formalizations:
-  - id: "https://github.com/dtq1997/li2-half-irrationality/tree/d5d8206427e58833d85ca6dc349fec0bd53d5108"
+  - id: "https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-30-000013&version=1"
     relationship: "adapts"
-    note: "Auxiliary Lean developments were adapted; see NOTICE for the files and attribution."
+    note: >-
+      Irrationality of Li₂(1/2), Palomar entry PALOMAR-2026-09-30-000013
+      (dtq1997/li2-half-irrationality at commit 950ee9d). Auxiliary Lean
+      developments were adapted from commit d5d8206 of the same repository,
+      which only removes unused declarations from 950ee9d; see NOTICE for
+      the files and attribution.
+  - id: "https://github.com/siqiliu-tsinghua/Li2Rational/tree/b2a61c46c157860b57faa163341fda725c629139"
+    relationship: "other"
+    note: >-
+      Si-Qi Liu's Lean formalization of the same method for Li₂(r) at
+      rational points r, shared with the author.
   - id: "https://github.com/mo271/Zeta5/tree/f19a1960609f7d38e7b63fd2acb05e6f60a7b741"
     relationship: "adapts"
     note: "Selected auxiliary Lean developments were adapted; see NOTICE for the files and attribution."
