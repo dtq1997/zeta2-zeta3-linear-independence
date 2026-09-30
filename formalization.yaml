@@ -173,7 +173,7 @@ limitations:
 # ---------------------------------------------------------------------------
 alignment:
   statements:
-    - source: "Linear independence of 1, ζ(2), ζ(3) over ℚ (open problem; see the README)"
+    - source: "Linear independence of 1, ζ(2), ζ(3) over ℚ"
       lean: "one_zeta_two_zeta_three_linearIndependent"
       module: "Challenge (statement), Solution (proof)"
       status: "author-checked"
@@ -182,4 +182,4 @@ alignment:
         Solution state the same proposition literally. Solution.lean obtains it
         from Zeta32.one_zeta_two_zeta_three_linearIndependent.
 
-acknowledgements: "I thank Si-Qi Liu for helpful discussions."
+acknowledgements: "I thank Si-Qi Liu for related discussions and for sharing code with me."

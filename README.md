@@ -2,13 +2,13 @@
 
 English | [中文](README.zh-CN.md)
 
-This project gives a Lean 4 proof that the numbers
+This project gives a Lean 4 proof that the following three numbers
 
 $$1,\qquad \zeta(2)=\sum_{n\ge 1}\frac{1}{n^2},\qquad \zeta(3)=\sum_{n\ge 1}\frac{1}{n^3}$$
 
 are linearly independent over $`\mathbb{Q}`$.
 
-On 17 September 2026, Aabir Fauzan gave a proof that $`\zeta(5)`$ is irrational [1]. The proof was soon formalized in Lean [2, 3, 4], and the blog Persiflage [5] pointed out that, by changing Fauzan's choice of parameters, the same method handles $`\zeta(k)`$ for $`k=2,3,4,5`$. On 28 September 2026, I used Fauzan's method to prove that $`\mathrm{Li}_2(1/2)`$ is irrational [6], and Si-Qi Liu (GitHub: siqiliu-tsinghua) extended the method to $`\mathrm{Li}_2(r)`$ at many rational points $`r`$ [7]. This project applies the method to the numbers $`\zeta(3)-r\,\zeta(2)`$ with $`r`$ rational.
+On 17 September 2026, Aabir Fauzan gave a proof that $`\zeta(5)`$ is irrational [1]. The proof was soon formalized in Lean [2, 3, 4], and the blog Persiflage [5] pointed out that, by changing Fauzan's choice of parameters, the same method handles $`\zeta(k)`$ for $`k=2,3,4,5`$. On 28 September 2026, I used Fauzan's method to prove that $`\mathrm{Li}_2(1/2)`$ is irrational [6], and Si-Qi Liu (GitHub: siqiliu-tsinghua) extended the method to $`\mathrm{Li}_2(r)`$ at many rational points $`r`$ [7]. This project makes some improvements in the details, which allow the method to be applied further to the numbers $`\zeta(3)-r\,\zeta(2)`$ with $`r`$ rational.
 
 ## Main result
 
@@ -16,7 +16,7 @@ $`1`$, $`\zeta(2)`$ and $`\zeta(3)`$ are linearly independent over $`\mathbb{Q}`
 
 Equivalently, $`\zeta(2)`$ is irrational, and $`\zeta(3)-r\,\zeta(2)`$ is irrational for every rational number $`r`$.
 
-For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9]; the irrationality of $`\zeta(2)=\pi^2/6`$ is classical. To our knowledge, the linear independence of $`1,\zeta(2),\zeta(3)`$ over $`\mathbb{Q}`$ was an open problem. It would follow from the conjectured algebraic independence of $`\pi,\zeta(3),\zeta(5),\dots`$. Gutnik [10] proved that for every rational $`q`$ at least one of $`-3\zeta(3)+q\,\zeta(2)`$ and $`\zeta(2)-2q\log 2`$ is irrational. Calegari, Dimitrov and Tang [11] proved that $`1,\zeta(2),L(2,\chi_{-3})`$ are linearly independent over $`\mathbb{Q}`$. A literature search on 29 September 2026 (arXiv, zbMATH Open and general web search) found no earlier proof that $`\zeta(3)-r\,\zeta(2)`$ is irrational for a rational $`r\ne 0`$. Novelty beyond that search is not established.
+For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9]. The irrationality of $`\zeta(2)=\pi^2/6`$ is classical. Gutnik [10] proved that for every rational $`q`$ at least one of $`-3\zeta(3)+q\,\zeta(2)`$ and $`\zeta(2)-2q\log 2`$ is irrational. Calegari, Dimitrov and Tang [11] proved that $`1,\zeta(2),L(2,\chi_{-3})`$ are linearly independent over $`\mathbb{Q}`$.
 
 ## Formalization and verification
 
@@ -60,7 +60,7 @@ Our own check used the verification scripts of the Palomar pipeline (PalomarRegi
 
 ## Acknowledgements
 
-I thank Si-Qi Liu (GitHub: siqiliu-tsinghua) for helpful discussions.
+I thank Si-Qi Liu (GitHub: siqiliu-tsinghua) for related discussions and for sharing code with me.
 
 This project was completed with the assistance of Anthropic's Claude Opus 5.5 and OpenAI's GPT-6-Astra.
 
