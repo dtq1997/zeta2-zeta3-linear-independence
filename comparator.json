@@ -2,7 +2,8 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "one_zeta_two_zeta_three_linearIndependent"
+    "one_zeta_two_zeta_three_linearIndependent",
+    "one_zeta_two_zeta_three_linearIndependent_series"
   ],
   "definition_names": [],
   "permitted_axioms": [

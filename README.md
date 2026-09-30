@@ -28,8 +28,17 @@ For $`r=0`$ this is Apéry's theorem [8], which has been formalized in Lean [9].
   ```
 
   The statement uses only Mathlib definitions (`riemannZeta` and `LinearIndependent`) and none of this project's own.
-- The theorem depends only on Lean's three standard axioms `propext`, `Classical.choice` and `Quot.sound`.
-- The proof was also checked independently with [comparator](https://github.com/leanprover/comparator): it compares the statement against the challenge file [`Challenge.lean`](Challenge.lean), and the whole proof is rechecked by two kernels, the Lean kernel and [nanoda](https://github.com/ammkrn/nanoda_lib). See below for how to reproduce this check.
+
+  A second theorem, `one_zeta_two_zeta_three_linearIndependent_series`, states the same result with the two series written out, so that reading it needs no definition beyond real infinite sums:
+
+  ```lean
+  theorem one_zeta_two_zeta_three_linearIndependent_series (a b c : ℚ)
+      (h : (a : ℝ) + b * (∑' k : ℕ, 1 / ((k : ℝ) + 1) ^ 2)
+        + c * (∑' k : ℕ, 1 / ((k : ℝ) + 1) ^ 3) = 0) :
+      a = 0 ∧ b = 0 ∧ c = 0
+  ```
+- Both theorems depend only on Lean's three standard axioms `propext`, `Classical.choice` and `Quot.sound`.
+- The proof was also checked independently with [comparator](https://github.com/leanprover/comparator): it compares the statements against the challenge file [`Challenge.lean`](Challenge.lean), and the whole proof is rechecked by two kernels, the Lean kernel and [nanoda](https://github.com/ammkrn/nanoda_lib). See below for how to reproduce this check.
 - Toolchain: Lean `v4.35.0-rc3`, Mathlib `c55e6e78`. To build:
 
   ```sh

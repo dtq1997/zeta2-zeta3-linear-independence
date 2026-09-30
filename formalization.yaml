@@ -31,12 +31,21 @@ status:
     Complete, with no unproved step. Formalized: 1, ζ(2), ζ(3) are linearly
     independent over ℚ, stated in Challenge.lean as
     LinearIndependent ℚ ![(1 : ℂ), riemannZeta 2, riemannZeta 3], with
-    Mathlib's riemannZeta. Nothing is assumed from the literature.
+    Mathlib's riemannZeta. A second compared theorem,
+    one_zeta_two_zeta_three_linearIndependent_series, states the same result
+    with ζ(2) and ζ(3) written as the series Σ_{n≥1} 1/n² and Σ_{n≥1} 1/n³.
+    Nothing is assumed from the literature.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
     - declaration: "one_zeta_two_zeta_three_linearIndependent"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "one_zeta_two_zeta_three_linearIndependent_series"
       file: "Solution.lean"
       sorry_count: 0
       axioms: ["propext", "Quot.sound", "Classical.choice"]
@@ -184,5 +193,14 @@ alignment:
         The statement of record, compared by Comparator. The Challenge and the
         Solution state the same proposition literally. Solution.lean obtains it
         from Zeta32.one_zeta_two_zeta_three_linearIndependent.
+    - source: "Linear independence of 1, ζ(2), ζ(3) over ℚ, with the series written out"
+      lean: "one_zeta_two_zeta_three_linearIndependent_series"
+      module: "Challenge (statement), Solution (proof)"
+      status: "author-checked"
+      note: >-
+        Also compared by Comparator. For rational a, b, c, if
+        a + b Σ_{n≥1} 1/n² + c Σ_{n≥1} 1/n³ = 0 then a = b = c = 0; both series
+        are written with index k = n − 1. Solution.lean derives it from the
+        first theorem.
 
 acknowledgements: "I thank Si-Qi Liu for related discussions and for sharing code with me."

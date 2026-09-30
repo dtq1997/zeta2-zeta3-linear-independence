@@ -28,7 +28,16 @@ $`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(
   ```
 
   陈述只用到 Mathlib 的定义（`riemannZeta` 与 `LinearIndependent`），不含本项目自己的任何定义。
-- 该定理只依赖 Lean 的三条标准公理 `propext`、`Classical.choice`、`Quot.sound`。
+
+  另一个定理 `one_zeta_two_zeta_three_linearIndependent_series` 把两个级数直接写出来，陈述同一结论，读它只需要实数无穷级数的定义：
+
+  ```lean
+  theorem one_zeta_two_zeta_three_linearIndependent_series (a b c : ℚ)
+      (h : (a : ℝ) + b * (∑' k : ℕ, 1 / ((k : ℝ) + 1) ^ 2)
+        + c * (∑' k : ℕ, 1 / ((k : ℝ) + 1) ^ 3) = 0) :
+      a = 0 ∧ b = 0 ∧ c = 0
+  ```
+- 两个定理都只依赖 Lean 的三条标准公理 `propext`、`Classical.choice`、`Quot.sound`。
 - 另用 [comparator](https://github.com/leanprover/comparator) 做了独立验收：以 [`Challenge.lean`](Challenge.lean) 为题面核对陈述，并用 Lean 内核与 [nanoda](https://github.com/ammkrn/nanoda_lib) 两个内核分别重新检查全部证明。复现方法见下文。
 - 工具链：Lean `v4.35.0-rc3`，Mathlib `c55e6e78`。构建方法：
 
