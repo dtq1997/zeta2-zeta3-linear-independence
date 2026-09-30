@@ -1,0 +1,21 @@
+name = "Zeta32Irrationality"
+version = "0.1.0"
+defaultTargets = ["Solution"]
+weakLeanArgs = ["-j1"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "c55e6e786f49471c72fbddbec5415808896aec1e"
+
+[[lean_lib]]
+name = "Zeta32"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

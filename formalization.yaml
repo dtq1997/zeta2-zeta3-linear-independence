@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Linear independence of 1, ζ(2), ζ(3) over ℚ"
+  description: >-
+    A Lean formalization of the linear independence of 1, ζ(2) and ζ(3)
+    over ℚ; equivalently, ζ(2) is irrational, and ζ(3) − r ζ(2) is
+    irrational for every rational number r.
+    The proof is inspired by A. Fauzan's work on the irrationality of
+    ζ(5) and builds on the Lean formalization of the irrationality of
+    Li₂(1/2) in dtq1997/li2-half-irrationality.
+    The central idea is to establish the irrationality of a real number x
+    by constructing a sequence of integer polynomials P_n whose values
+    P_n(x) decay rapidly as n tends to infinity, while for every rational
+    q, P_n(q) ≠ 0 for infinitely many n. Here x = ζ(3) − r ζ(2), and the
+    polynomials Q_n with rational coefficients are Hankel determinants of
+    an umbral functional built from Bernoulli numbers and the values ζ(2),
+    ζ(3). A Heine–Andreief identity and a logarithmic energy estimate
+    provide rapid decay of Q_n(x) as n tends to infinity. Estimates of
+    p-adic valuations, together with the prime number theorem, ensure
+    that the values P_n(x) of the corresponding primitive integer
+    polynomials also decay rapidly as n tends to infinity, completing the
+    proof. The irrationality of ζ(2) = π²/6 is proved by adapting
+    Mathlib's proof that π is irrational.
+    The compared theorem depends on propext, Classical.choice and
+    Quot.sound and on nothing else, and there is no sorry outside the
+    one deliberate hole in Challenge.lean.
+  authors:
+    - "Qian Tang"
+  responsible_maintainers:
+    - "Qian Tang"
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11J72", "11M06"]
+
+status:
+  scope: >-
+    Complete, with no unproved step. Formalized: 1, ζ(2), ζ(3) are linearly
+    independent over ℚ, stated in Challenge.lean as
+    LinearIndependent ℚ ![(1 : ℂ), riemannZeta 2, riemannZeta 3], with
+    Mathlib's riemannZeta. Nothing is assumed from the literature.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "one_zeta_two_zeta_three_linearIndependent"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+
+fidelity:
+  divergences: >-
+    The formal statement uses Mathlib's riemannZeta and LinearIndependent,
+    with the three numbers viewed as complex numbers.
+    This is an original proof using methods adapted from the cited
+    work on ζ(5).
+
+sources:
+  - title: "Linear independence of 1, ζ(2), ζ(3) over ℚ"
+    authors: ["Qian Tang"]
+    id: "https://github.com/dtq1997/zeta2-zeta3-linear-independence"
+    type: "original-proof"
+    relationship: "other"
+    note: >-
+      The proof is first presented in this repository. A literature search
+      (2026-09-29: arXiv, zbMATH Open and general web search) found no
+      earlier proof that ζ(3) − r ζ(2) is irrational for a rational r ≠ 0,
+      and no earlier proof of the linear independence of 1, ζ(2), ζ(3)
+      over ℚ. Novelty beyond that search is not established.
+
+  - title: "ζ(5) is irrational"
+    authors: ["Aabir Fauzan"]
+    id: "https://doi.org/10.5281/zenodo.22826419"
+    type: "preprint"
+    relationship: "other"
+    note: >-
+      The proof adapts the polynomial approach of this
+      paper to ζ(3) − r ζ(2).
+
+  - title: "Irrationalité de ζ(2) et ζ(3)"
+    authors: ["Roger Apéry"]
+    type: "paper"
+    location: "Astérisque 61 (1979), 11–13"
+    relationship: "background"
+    note: "The case r = 0 is Apéry's theorem."
+
+  - title: "On the irrationality of certain quantities containing ζ(3)"
+    authors: ["L. A. Gutnik"]
+    id: "https://doi.org/10.4064/aa-42-3-255-264"
+    type: "paper"
+    location: "Acta Arith. 42 (1983), 255–264"
+    relationship: "background"
+    note: >-
+      Proves that for every rational q at least one of −3ζ(3) + q ζ(2) and
+      ζ(2) − 2q log 2 is irrational.
+
+  - title: "The linear independence of 1, ζ(2), and L(2,χ₋₃)"
+    authors: ["Frank Calegari", "Vesselin Dimitrov", "Yunqing Tang"]
+    id: "https://arxiv.org/abs/2408.15403"
+    type: "preprint"
+    relationship: "background"
+
+related_formalizations:
+  - id: "https://github.com/dtq1997/li2-half-irrationality/tree/d5d8206427e58833d85ca6dc349fec0bd53d5108"
+    relationship: "adapts"
+    note: "Auxiliary Lean developments were adapted; see NOTICE for the files and attribution."
+  - id: "https://github.com/mo271/Zeta5/tree/f19a1960609f7d38e7b63fd2acb05e6f60a7b741"
+    relationship: "adapts"
+    note: "Selected auxiliary Lean developments were adapted; see NOTICE for the files and attribution."
+  - id: "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/tree/d7f9e2bfdcc7e34dfb9328b7494a6d424ff50c96"
+    relationship: "adapts"
+    note: "The prime-number-theorem developments listed in NOTICE were adapted."
+  - id: "https://github.com/leanprover-community/mathlib4/pull/39232"
+    relationship: "adapts"
+    note: "The rectangular-contour residue development was adapted from commit cad38f70f5a649a40dbb3b334055a8e9aff69af5; see NOTICE."
+
+# ---------------------------------------------------------------------------
+# How this was produced.
+# ---------------------------------------------------------------------------
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus 5.5 (Anthropic)", "GPT-6 Astra (OpenAI)"]
+      framework: "Claude Code; Codex"
+      role: >-
+        Wrote and revised the Lean formalization under the author's
+        direction: formalizing the polynomial construction, proving the
+        analytic and arithmetic estimates, and combining these results
+        into the proof of the main theorem. Adapted auxiliary Lean code
+        from the projects listed under related_formalizations, with
+        attribution recorded in NOTICE. Also wrote Challenge.lean and
+        Solution.lean, prepared comparator.json for the Palomar submission,
+        and ran compilation and proof checks.
+
+review:
+  status: "self-assessed"
+  notes: >-
+    The correspondence between the intended mathematical claim and the
+    statement in Challenge.lean was checked by the author. The author
+    has not fully reviewed the rest of the Lean code. Every formalized
+    proof step is checked by Lean.
+
+# ---------------------------------------------------------------------------
+# Limitations, stated so that a reader can calibrate the claim.
+# ---------------------------------------------------------------------------
+known_gaps: []
+
+limitations:
+  - >-
+    The proof is presented as a Lean development. No informal write-up
+    accompanies it.
+  - >-
+    The compared theorem depends on propext, Classical.choice and
+    Quot.sound, and on nothing else. There is no sorry in Zeta32/
+    or Solution.lean, and no project-defined axiom, native_decide,
+    unsafe declaration, @[implemented_by] or Float in the proof
+    development.
+  - >-
+    The proof includes finite computations carried out using
+    decide +kernel. These computations are checked by the Lean kernel.
+  - >-
+    Challenge.lean states the result with one deliberate sorry;
+    that is the Comparator convention, and Solution.lean supplies
+    the proof.
+
+# ---------------------------------------------------------------------------
+# How the stated problem corresponds to the Lean declaration.
+# ---------------------------------------------------------------------------
+alignment:
+  statements:
+    - source: "Linear independence of 1, ζ(2), ζ(3) over ℚ (open problem; see the README)"
+      lean: "one_zeta_two_zeta_three_linearIndependent"
+      module: "Challenge (statement), Solution (proof)"
+      status: "author-checked"
+      note: >-
+        The statement of record, compared by Comparator. The Challenge and the
+        Solution state the same proposition literally. Solution.lean obtains it
+        from Zeta32.one_zeta_two_zeta_three_linearIndependent.
+
+acknowledgements: "I thank Si-Qi Liu for helpful discussions."
