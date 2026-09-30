@@ -89,6 +89,15 @@ sources:
     type: "preprint"
     relationship: "background"
 
+  - title: "A Characterization of Umbral Calculus Inspired by Fractional Sums"
+    authors: ["Qian Tang"]
+    id: "https://arxiv.org/abs/2103.09117v1"
+    type: "preprint"
+    relationship: "other"
+    note: >-
+      The analytic umbral calculus developed in this paper was used to
+      find the polynomials Q_n in the proof.
+
 related_formalizations:
   - id: "https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-30-000013&version=1"
     relationship: "adapts"
