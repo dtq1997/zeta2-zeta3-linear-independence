@@ -2,13 +2,13 @@
 
 [English](README.md) | 中文
 
-本项目用 Lean 4 证明：三个数
+本项目用 Lean 4 证明：如下三个数
 
 $$1,\qquad \zeta(2)=\sum_{n\ge 1}\frac{1}{n^2},\qquad \zeta(3)=\sum_{n\ge 1}\frac{1}{n^3}$$
 
 在 $`\mathbb{Q}`$ 上线性无关。
 
-2026 年 9 月 17 日，Aabir Fauzan 给出了 $`\zeta(5)`$ 的无理性证明 [1]。这一证明很快有了 Lean 形式化 [2, 3, 4]；博客 Persiflage [5] 还指出，调整 Fauzan 的参数取法，可以用同一方法统一处理 $`\zeta(k)`$，$`k=2,3,4,5`$。2026 年 9 月 28 日，我用 Fauzan 的方法给出了 $`\mathrm{Li}_2(1/2)`$ 的无理性证明 [6]，刘思齐（GitHub：siqiliu-tsinghua）又把这一方法推广到 $`\mathrm{Li}_2(r)`$ 在许多有理点 $`r`$ 处的值 [7]。本项目把这一方法用于 $`\zeta(3)-r\,\zeta(2)`$，其中 $`r`$ 为有理数。
+2026 年 9 月 17 日，Aabir Fauzan 给出了 $`\zeta(5)`$ 的无理性证明 [1]。这一证明很快有了 Lean 形式化 [2, 3, 4]；博客 Persiflage [5] 还指出，调整 Fauzan 的参数取法，可以用同一方法统一处理 $`\zeta(k)`$，$`k=2,3,4,5`$。2026 年 9 月 28 日，我用 Fauzan 的方法给出了 $`\mathrm{Li}_2(1/2)`$ 的无理性证明 [6]，刘思齐（GitHub：siqiliu-tsinghua）又把这一方法推广到 $`\mathrm{Li}_2(r)`$ 在许多有理点 $`r`$ 处的值 [7]。本项目作出一些细节上的改进，使得可以继续将这一方法应用于 $`\zeta(3)-r\,\zeta(2)`$，其中 $`r`$ 为有理数。
 
 ## 主要结果
 
@@ -16,7 +16,7 @@ $`1`$、$`\zeta(2)`$、$`\zeta(3)`$ 在 $`\mathbb{Q}`$ 上线性无关：若 $`a
 
 等价地说：$`\zeta(2)`$ 是无理数，并且对每个有理数 $`r`$，$`\zeta(3)-r\,\zeta(2)`$ 都是无理数。
 
-$`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]；$`\zeta(2)=\pi^2/6`$ 的无理性是经典结果。据我们所知，$`1,\zeta(2),\zeta(3)`$ 在 $`\mathbb{Q}`$ 上的线性无关此前是公开问题，它可以由 $`\pi,\zeta(3),\zeta(5),\dots`$ 代数无关这一猜想推出。Gutnik [10] 证明了：对每个有理数 $`q`$，$`-3\zeta(3)+q\,\zeta(2)`$ 与 $`\zeta(2)-2q\log 2`$ 中至少有一个是无理数。Calegari、Dimitrov、Tang [11] 证明了 $`1,\zeta(2),L(2,\chi_{-3})`$ 在 $`\mathbb{Q}`$ 上线性无关。2026 年 9 月 29 日的文献检索（arXiv、zbMATH Open 与一般网络搜索）没有找到此前对有理数 $`r\ne 0`$ 证明 $`\zeta(3)-r\,\zeta(2)`$ 无理的工作。检索范围之外的新颖性未经确认。
+$`r=0`$ 时这就是 Apéry 定理 [8]，它已有 Lean 形式化 [9]。$`\zeta(2)=\pi^2/6`$ 的无理性是经典结果。Gutnik [10] 证明了：对每个有理数 $`q`$，$`-3\zeta(3)+q\,\zeta(2)`$ 与 $`\zeta(2)-2q\log 2`$ 中至少有一个是无理数。Calegari、Dimitrov、Tang [11] 证明了 $`1,\zeta(2),L(2,\chi_{-3})`$ 在 $`\mathbb{Q}`$ 上线性无关。
 
 ## 形式化与验证
 
@@ -60,7 +60,7 @@ lake env /path/to/comparator comparator.json
 
 ## 致谢
 
-感谢刘思齐老师（GitHub：siqiliu-tsinghua）的有益讨论。
+感谢刘思齐老师（GitHub：siqiliu-tsinghua）的相关讨论以及与我分享的代码。
 
 本项目在 Anthropic 的 Claude Opus 5.5 和 OpenAI 的 GPT-6-Astra 协助下完成。
 
